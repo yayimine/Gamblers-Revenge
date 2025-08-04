@@ -5,7 +5,7 @@ using UnityEngine;
 public class FollowPlayer : MonoBehaviour
 {
     // Update is called once per frame
-    void LateUpdate()
+    public virtual void LateUpdate()
     {
         if (PlayerController.instance == null) return; // If the player doesn't exist, do nothing
         transform.position = new Vector3(PlayerController.instance.transform.position.x, //take the player's x position
