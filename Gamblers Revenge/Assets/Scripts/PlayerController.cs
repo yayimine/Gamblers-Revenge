@@ -7,8 +7,9 @@ public class PlayerController : MonoBehaviour
 {
     public static PlayerController instance; //singleton
 
-    public float speed = 5f;
+    public float speed = 8f;
     Rigidbody2D rb;
+    private Animator anim;
 
     public int points = 0;
     public int maxPoints = 5;
@@ -45,6 +46,7 @@ public class PlayerController : MonoBehaviour
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
         instance = this;
 
         GameManager.instance.InitializeScore(); // Initialize the score in GameManager
@@ -59,5 +61,24 @@ public class PlayerController : MonoBehaviour
         Vector2 inputDir = new Vector2(horizontalInput, verticalInput).normalized; // .normalized makes the vector have a magnitude of 1! it is important!
 
         rb.velocity = inputDir * speed;
+        anim.SetFloat("speed", Mathf.Abs(rb.velocity.magnitude));
+
+        if (horizontalInput > 0)
+        {
+            anim.SetBool("MovingRight", true);
+        }
+        else if (horizontalInput < 0)
+        {
+            anim.SetBool("MovingRight", false);
+        }
+
+        if (horizontalInput != 0 || verticalInput != 0)
+        {
+            anim.SetFloat("speed", speed);  // or use rb.velocity.magnitude
+        }
+        else
+        {
+            anim.SetFloat("speed", 0f);
+        }
     }
 }
