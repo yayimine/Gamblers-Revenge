@@ -186,4 +186,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1
+  maxPierces: 0
   lifetime: 3
