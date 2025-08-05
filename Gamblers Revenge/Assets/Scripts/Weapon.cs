@@ -4,14 +4,15 @@ using UnityEngine;
 
 public class Weapon : MonoBehaviour
 {
-    public float damage = 5f;
+    public float damage = 1f;
     public float fireRate = 1.5f;
-    private float fireTimer = 1.5f;
+    public float fireTimer = 1.5f;
 
     public virtual void Attack()
     {
         print("Parent attack!");
     }
+
 
     // Update is called once per frame
     void Update()
@@ -27,6 +28,7 @@ public class Weapon : MonoBehaviour
                 fireTimer = fireRate; // Reset the timer
             
         }
+       
     }
     
 }
