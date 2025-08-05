@@ -1,0 +1,809 @@
+fileFormatVersion: 2
+guid: c14ee8b1e9cd90845909e47f80f38fd3
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Wight_Knight_Pixel_art_Movement_idle_0
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 384
+        width: 44
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f000c07c4ea09c4db298ccc31d245bb
+      internalID: -1578555543
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wight_Knight_Pixel_art_Movement_idle_1
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 384
+        width: 44
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 411e6c9cc3cb9ca48bee5f87fb3c6bf9
+      internalID: -1189224609
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wight_Knight_Pixel_art_Movement_idle_2
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 384
+        width: 44
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8435870545b2fb4428db9d9338fb0ade
+      internalID: 395238773
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wight_Knight_Pixel_art_Movement_idle_3
+      rect:
+        serializedVersion: 2
+        x: 428
+        y: 384
+        width: 44
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9524c2d9d9ac506428db45d0235b59ef
+      internalID: 1453822144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wight_Knight_Pixel_art_Movement_idle_4
+      rect:
+        serializedVersion: 2
+        x: 556
+        y: 384
+        width: 44
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35c37098ee79278408446a19d9bc0b0d
+      internalID: 1387814108
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wight_Knight_Pixel_art_Movement_idle_5
+      rect:
+        serializedVersion: 2
+        x: 684
+        y: 384
+        width: 44
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc9ba78112a8d2949ae22fc28f56617d
+      internalID: -743013941
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wight_Knight_Pixel_art_Movement_idle_6
+      rect:
+        serializedVersion: 2
+        x: 812
+        y: 384
+        width: 44
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b55e9e28588a630499a016b4b4d2f3b1
+      internalID: 163454724
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wight_Knight_Pixel_art_Movement_idle_7
+      rect:
+        serializedVersion: 2
+        x: 940
+        y: 384
+        width: 44
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88e7b92ba423d9a429c48b1cdb9c0b11
+      internalID: 28559413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wight_Knight_Pixel_art_Movement_idle_8
+      rect:
+        serializedVersion: 2
+        x: 1068
+        y: 384
+        width: 44
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac670eb443f2c9f4a9de4302fcdc4983
+      internalID: -1759866917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wight_Knight_Pixel_art_Movement_idle_9
+      rect:
+        serializedVersion: 2
+        x: 1196
+        y: 384
+        width: 44
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32ec63a9d3a2e524998e9120992cdf05
+      internalID: 53301942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wight_Knight_Pixel_art_Movement_idle_10
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 256
+        width: 44
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bff6bbeaf520daf41947ac5ac299317a
+      internalID: 2091487249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wight_Knight_Pixel_art_Movement_idle_11
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 256
+        width: 44
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c921a942d6a79a3408acf5d338ea65a7
+      internalID: 985506602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wight_Knight_Pixel_art_Movement_idle_12
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 256
+        width: 44
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9fd490cfacdcaa443a920e097e10fcec
+      internalID: 963851495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wight_Knight_Pixel_art_Movement_idle_13
+      rect:
+        serializedVersion: 2
+        x: 428
+        y: 256
+        width: 44
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04da1a452b7258047bb39522eeb54c0c
+      internalID: -802653513
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wight_Knight_Pixel_art_Movement_idle_14
+      rect:
+        serializedVersion: 2
+        x: 556
+        y: 256
+        width: 44
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7913d0003524cb8448e307d987249a81
+      internalID: -819425132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wight_Knight_Pixel_art_Movement_idle_15
+      rect:
+        serializedVersion: 2
+        x: 684
+        y: 256
+        width: 44
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62edc9af630776d4cad45632f5407b6d
+      internalID: -1436312293
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wight_Knight_Pixel_art_Movement_idle_16
+      rect:
+        serializedVersion: 2
+        x: 812
+        y: 256
+        width: 44
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81dee4b701a814e43ba6e6bbfe2c62b2
+      internalID: -1684800752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wight_Knight_Pixel_art_Movement_idle_17
+      rect:
+        serializedVersion: 2
+        x: 940
+        y: 256
+        width: 44
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a0edef550d62714daf24e37da593652
+      internalID: -557184213
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wight_Knight_Pixel_art_Movement_idle_18
+      rect:
+        serializedVersion: 2
+        x: 1068
+        y: 256
+        width: 44
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2afe94950fca054da319326097c6598
+      internalID: 1539913410
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wight_Knight_Pixel_art_Movement_idle_19
+      rect:
+        serializedVersion: 2
+        x: 1196
+        y: 256
+        width: 44
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a90a89f78e6625a4c962c996b2d59182
+      internalID: -1586538307
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wight_Knight_Pixel_art_Movement_idle_20
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 128
+        width: 44
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 578a87f66a9b47a408feb96338347fa2
+      internalID: -1614954004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wight_Knight_Pixel_art_Movement_idle_21
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 128
+        width: 44
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 602ecdd0dec2d6840992e7ff819bdb9d
+      internalID: 1649753587
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wight_Knight_Pixel_art_Movement_idle_22
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 128
+        width: 44
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f7e76f239af02f469cce348ad78ec4e
+      internalID: -2010096218
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wight_Knight_Pixel_art_Movement_idle_23
+      rect:
+        serializedVersion: 2
+        x: 428
+        y: 128
+        width: 44
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f40ad74c59fe51241a59213dd7e14032
+      internalID: 504195150
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wight_Knight_Pixel_art_Movement_idle_24
+      rect:
+        serializedVersion: 2
+        x: 556
+        y: 128
+        width: 44
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc4449e64b368894992c2d6a0e77292e
+      internalID: 628197834
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wight_Knight_Pixel_art_Movement_idle_25
+      rect:
+        serializedVersion: 2
+        x: 684
+        y: 128
+        width: 44
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c82d8acc39eeb8d4ebb61316afb19bcf
+      internalID: 58945827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wight_Knight_Pixel_art_Movement_idle_26
+      rect:
+        serializedVersion: 2
+        x: 812
+        y: 128
+        width: 44
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 544bcbe2111d13b4d81ec7b39d0aef7f
+      internalID: -1841044512
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wight_Knight_Pixel_art_Movement_idle_27
+      rect:
+        serializedVersion: 2
+        x: 940
+        y: 128
+        width: 44
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 760bb8829a2365f44ae701c655896fe4
+      internalID: -235101533
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wight_Knight_Pixel_art_Movement_idle_28
+      rect:
+        serializedVersion: 2
+        x: 1068
+        y: 128
+        width: 44
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ccdc548172ffe34ea0f4b4262a3d73c
+      internalID: -1121489484
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wight_Knight_Pixel_art_Movement_idle_29
+      rect:
+        serializedVersion: 2
+        x: 1196
+        y: 128
+        width: 44
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b96576792aef1f64ebfafc998c62f753
+      internalID: -867633165
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wight_Knight_Pixel_art_Movement_idle_30
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 0
+        width: 44
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e199e9808f77c2a44882c3701f3bf429
+      internalID: -1724677493
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Wight_Knight_Pixel_art_Movement_idle_0: -1578555543
+      Wight_Knight_Pixel_art_Movement_idle_1: -1189224609
+      Wight_Knight_Pixel_art_Movement_idle_10: 2091487249
+      Wight_Knight_Pixel_art_Movement_idle_11: 985506602
+      Wight_Knight_Pixel_art_Movement_idle_12: 963851495
+      Wight_Knight_Pixel_art_Movement_idle_13: -802653513
+      Wight_Knight_Pixel_art_Movement_idle_14: -819425132
+      Wight_Knight_Pixel_art_Movement_idle_15: -1436312293
+      Wight_Knight_Pixel_art_Movement_idle_16: -1684800752
+      Wight_Knight_Pixel_art_Movement_idle_17: -557184213
+      Wight_Knight_Pixel_art_Movement_idle_18: 1539913410
+      Wight_Knight_Pixel_art_Movement_idle_19: -1586538307
+      Wight_Knight_Pixel_art_Movement_idle_2: 395238773
+      Wight_Knight_Pixel_art_Movement_idle_20: -1614954004
+      Wight_Knight_Pixel_art_Movement_idle_21: 1649753587
+      Wight_Knight_Pixel_art_Movement_idle_22: -2010096218
+      Wight_Knight_Pixel_art_Movement_idle_23: 504195150
+      Wight_Knight_Pixel_art_Movement_idle_24: 628197834
+      Wight_Knight_Pixel_art_Movement_idle_25: 58945827
+      Wight_Knight_Pixel_art_Movement_idle_26: -1841044512
+      Wight_Knight_Pixel_art_Movement_idle_27: -235101533
+      Wight_Knight_Pixel_art_Movement_idle_28: -1121489484
+      Wight_Knight_Pixel_art_Movement_idle_29: -867633165
+      Wight_Knight_Pixel_art_Movement_idle_3: 1453822144
+      Wight_Knight_Pixel_art_Movement_idle_30: -1724677493
+      Wight_Knight_Pixel_art_Movement_idle_4: 1387814108
+      Wight_Knight_Pixel_art_Movement_idle_5: -743013941
+      Wight_Knight_Pixel_art_Movement_idle_6: 163454724
+      Wight_Knight_Pixel_art_Movement_idle_7: 28559413
+      Wight_Knight_Pixel_art_Movement_idle_8: -1759866917
+      Wight_Knight_Pixel_art_Movement_idle_9: 53301942
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
