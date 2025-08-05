@@ -46080,7 +46080,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1428362750}
   - component: {fileID: 1428362751}
-  - component: {fileID: 1428362752}
   m_Layer: 0
   m_Name: Sword
   m_TagString: Untagged
@@ -46120,21 +46119,6 @@ MonoBehaviour:
   fireTimer: 1.5
   swordSlash: {fileID: 356116084920340005, guid: 7e2a5077c297cd94e99dea2744b95979, type: 3}
   slashSpeed: 30
---- !u!114 &1428362752
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1428362749}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d88b6fc2e69b43eb9f579557df600d9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 1
-  maxPierces: 1
-  lifetime: 3
 --- !u!1 &1525981550
 GameObject:
   m_ObjectHideFlags: 0
@@ -46565,7 +46549,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1916245787}
   - component: {fileID: 1916245789}
-  - component: {fileID: 1916245790}
   m_Layer: 0
   m_Name: SwordSlices
   m_TagString: Untagged
@@ -46605,21 +46588,6 @@ MonoBehaviour:
   fireTimer: 1.5
   projectilePrefab: {fileID: 356116084920340005, guid: 03919c5228cfc5a40ac21a5570160555, type: 3}
   shotSpeed: 20
---- !u!114 &1916245790
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1916245786}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d88b6fc2e69b43eb9f579557df600d9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 1
-  maxPierces: 1
-  lifetime: 3
 --- !u!1 &2002852402
 GameObject:
   m_ObjectHideFlags: 0
