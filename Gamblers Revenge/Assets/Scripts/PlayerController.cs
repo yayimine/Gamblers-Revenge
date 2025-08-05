@@ -1,59 +1,72 @@
-using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
-using UnityEngine.SceneManagement;
-using System; // For Math.round
 
 public class PlayerController : MonoBehaviour
 {
-    public static PlayerController instance; //singleton
-
-    public float speed = 8f;
-    Rigidbody2D rb;
-    private Animator anim;
-
+    [Header("Leveling & Upgrades")]
     public int points = 0;
     public int maxPoints = 5;
     public int level = 1;
-    public Weapon curWeapon; // set the pistol from the hierarchy to this slot in the inspector
+    public Weapon curWeapon;
+    public GameObject projectilePrefab;
 
+    public UpgradeManager upgradeManager; // assign in Inspector
 
-    private void OnDestroy()
-    {
-        UIManager ui = FindObjectOfType<UIManager>();
-        ui.loseScreen.SetActive(true);
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.CompareTag("Loot"))
-        { //the player is touching the loot object
-            Destroy(collision.gameObject);
-
-            points += 1;
-            if (points >= maxPoints)
-            {
-                level += 1;
-                points = 0;
-                maxPoints = (int)Math.Round(maxPoints * 1.5f);
-                OnLevelUp();
-
-                SpawnManager s = FindObjectOfType<SpawnManager>();
-                s.spawnRate *= .8f;
-            }
-        }
-    }
+    private bool _awaitingUpgrade = false;
+    private Rigidbody2D rb;
+    private Animator anim;
 
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
-        instance = this;
-
-        GameManager.instance.InitializeScore(); // Initialize the score in GameManager
+        GameManager.instance.InitializeScore();
     }
 
-    // Update is called once per frame
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Loot"))
+        {
+            Destroy(collision.gameObject);
+
+            if (_awaitingUpgrade) return;
+
+            points++;
+            if (points >= maxPoints)
+                LevelUp();
+        }
+    }
+
+    private void LevelUp()
+    {
+        _awaitingUpgrade = true;
+
+        // 1) Apply your static scaling
+        level++;
+        points = 0;
+        maxPoints = Mathf.RoundToInt(maxPoints * 1.5f);
+        FindObjectOfType<SpawnManager>().spawnRate *= 0.8f;
+
+        // 2) Pick 3 random upgrades
+        var picks = upgradeManager.GetRandomUpgrades(3);
+        var optionNames = picks.Select(u => u.ToString()).ToArray();
+
+        // 3) Show UI
+        UIManager.instance.ShowUpgradeScreen(optionNames, choice =>
+        {
+            // 4) Apply the one upgrade they picked
+            var chosenType = picks[choice];
+            upgradeManager.ApplyUpgrades(
+                new List<UpgradeType> { chosenType },
+                weapon: curWeapon,
+                player: this,
+                projectile: projectilePrefab.GetComponent<Projectile>()
+            );
+
+            _awaitingUpgrade = false;
+        });
+    }
     void Update()
     {
         float horizontalInput = Input.GetAxisRaw("Horizontal");
@@ -84,22 +97,5 @@ public class PlayerController : MonoBehaviour
     }
     
     // Example in PlayerController:
-void OnLevelUp()
-{
-    // 1) generate your 3 options, e.g. via UpgradeManager.GetRandomUpgrades(3):
-    var types = upgradeManager.GetRandomUpgrades(3);
-    // 2) convert to display names:
-    var names = types.Select(t => t.ToString()).ToArray();
-    // 3) show UI and handle choice:
-    UIManager.instance.ShowUpgradeScreen(names, chosenIndex =>
-    {
-        // apply the chosen upgrade:
-        var chosenType = types[chosenIndex];
-        upgradeManager.ApplyUpgrades(new List<UpgradeType> { chosenType },
-                                     weapon: myWeapon,
-                                     player: this,
-                                     projectile: lastFiredProjectile);
-    });
-}
 
 }
