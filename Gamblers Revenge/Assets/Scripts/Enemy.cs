@@ -19,7 +19,7 @@ public class Ghost : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Projectile"))
         { //if enemy collides with projectile
-            Destroy(collision.gameObject);
+            
             GetComponent<Health>().TakeDamage(collision.gameObject.GetComponent<Projectile>().damage);
             if (GetComponent<Health>().curHp <= 0f)
             {
