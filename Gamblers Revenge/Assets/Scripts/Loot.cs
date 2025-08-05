@@ -1,19 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class Loot : MonoBehaviour
 {
     // Update is called once per frame
-   
+
     [Header("Homing Settings")]
     public float homingRange = 5f;           // range within which the orb will start homing towards the player
-    public float attractionSpeed = 3f;       // speed at which the orb moves towards the player
-
-    [Header("Optional Speed Clamping")]
-    public bool clampSpeed = false;
-    public float minSpeed = 1f;
-    public float maxSpeed = 5f;
 
     private Transform player;
     private Rigidbody2D rb;
@@ -28,21 +23,14 @@ public class Loot : MonoBehaviour
     {
         Vector2 orbPos = transform.position;
         Vector2 playerPos = player.position;
+        playerPos += Vector2.down; // Offset player position slightly to avoid z-fighting
         float dist = Vector2.Distance(orbPos, playerPos);
 
         if (dist <= homingRange)
         {
             Vector2 dir = (playerPos - orbPos).normalized;
-
-            float speed = attractionSpeed;
-
-            if (clampSpeed)
-            {
-                // Optionally clamp between min and max
-                speed = Mathf.Clamp(attractionSpeed, minSpeed, maxSpeed);
-                // Or if you prefer distance‐based interpolation:
-                // speed = Mathf.Lerp(minSpeed, maxSpeed, dist / homingRange);
-            }
+            
+            float speed = (homingRange) / dist; // Interpolate speed based on distance            
 
             rb.velocity = dir * speed;
         }

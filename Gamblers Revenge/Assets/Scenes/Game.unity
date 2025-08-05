@@ -362,7 +362,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   points: 0
-  maxPoints: 10
+  maxPoints: 5
   level: 1
   curWeapon: {fileID: 1916245789}
 --- !u!50 &72662588
