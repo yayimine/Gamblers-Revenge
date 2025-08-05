@@ -14,9 +14,10 @@ GameObject:
   - component: {fileID: 6815397464114040592}
   - component: {fileID: 1502946292164648250}
   - component: {fileID: -8599124715398322879}
-  - component: {fileID: -7941236502763167001}
+  - component: {fileID: -5520760679029265455}
+  - component: {fileID: 3318637900624810053}
   m_Layer: 0
-  m_Name: Ghost
+  m_Name: Werewolf
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -31,7 +32,7 @@ Transform:
   m_GameObject: {fileID: 3081339230334308163}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -12.950969, y: 6.4952044, z: 0}
+  m_LocalPosition: {x: -12.685, y: 6.515, z: 0}
   m_LocalScale: {x: 3, y: 3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -78,7 +79,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: a4672fd2dac10cd438fb83bf3b24a539, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 28ea49214d42b7945983a658110aa5c8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -125,7 +126,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.37, y: 0.65}
+    oldSize: {x: 0.96, y: 0.53}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -133,20 +134,21 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.16169663, y: -0.09993118}
-      - {x: 0.16275078, y: -0.006799644}
-      - {x: 0.14963424, y: 0.086764246}
-      - {x: 0.07704245, y: 0.09566266}
-      - {x: 0.05097885, y: 0.18524812}
-      - {x: 0.014457386, y: 0.22170559}
-      - {x: -0.11180191, y: 0.15882404}
-      - {x: -0.15214393, y: -0.040333044}
-      - {x: -0.15880425, y: -0.17011574}
-      - {x: -0.1305715, y: -0.24838236}
+    - - {x: 0.2136016, y: -0.16913822}
+      - {x: 0.31197822, y: -0.011125192}
+      - {x: 0.22100376, y: 0.03485909}
+      - {x: 0.13181801, y: -0.03406518}
+      - {x: 0.070554286, y: 0.078360945}
+      - {x: 0.04232807, y: 0.10739015}
+      - {x: -0.0028441735, y: 0.10708156}
+      - {x: -0.11612714, y: 0.08529146}
+      - {x: -0.2819069, y: 0.015897661}
+      - {x: -0.31668282, y: -0.2782516}
+      - {x: -0.15436122, y: -0.28947413}
       - {x: -0.10064329, y: -0.28871688}
-      - {x: 0.05604922, y: -0.29739645}
-      - {x: 0.08082187, y: -0.23153852}
-      - {x: 0.10675746, y: -0.17300726}
+      - {x: 0.006306518, y: -0.14168066}
+      - {x: 0.08731003, y: -0.20126048}
+      - {x: 0.1413612, y: -0.19895977}
   m_UseDelaunayMesh: 0
 --- !u!50 &6815397464114040592
 Rigidbody2D:
@@ -188,7 +190,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   loot: {fileID: 7919791859526016229, guid: 1e4d1ca1eb34d45f48a10aab5ad19891, type: 3}
-  speed: 2
+  speed: 4
 --- !u!114 &-8599124715398322879
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -203,7 +205,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHp: 1
   curHp: 0
---- !u!95 &-7941236502763167001
+--- !u!114 &-5520760679029265455
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3081339230334308163}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2095e3e80835ebb4f949e6c17683553c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  loot: {fileID: 7919791859526016229, guid: 1e4d1ca1eb34d45f48a10aab5ad19891, type: 3}
+  speed: 5
+--- !u!95 &3318637900624810053
 Animator:
   serializedVersion: 5
   m_ObjectHideFlags: 0
@@ -213,7 +229,7 @@ Animator:
   m_GameObject: {fileID: 3081339230334308163}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 1d232a75a520a24468d98e82d3a765df, type: 2}
+  m_Controller: {fileID: 9100000, guid: 16a03d147c25e0c40b7a7e12f2a43998, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
