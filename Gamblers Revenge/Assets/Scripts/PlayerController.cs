@@ -34,7 +34,7 @@ public class PlayerController : MonoBehaviour
             {
                 level += 1;
                 points = 0;
-                maxPoints += 1;
+                maxPoints = (int)Math.round(maxPoints * 1.5f);
                 curWeapon.fireRate /= 1.5f;
 
                 SpawnManager s = FindObjectOfType<SpawnManager>();

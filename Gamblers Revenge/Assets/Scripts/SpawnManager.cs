@@ -2,7 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-using UnityEngine.SceneManagement;
+
+using UnityEngine.UI; // Import the UI namespace to work with UI elements
+using UnityEngine.SceneManagement; // Import the SceneManagement namespace to load scenes
 
 public class SpawnManager : MonoBehaviour
 {
@@ -10,6 +12,8 @@ public class SpawnManager : MonoBehaviour
     public float spawnRate = 1.5f;
     public float spawnTimer = 1.5f;
     // Start is called before the first frame update
+
+    
     void Start()
     {
 
@@ -18,7 +22,9 @@ public class SpawnManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        spawnRate = 2 / GameManager.instance.gameStage;
+        if (GameManager.instance == null) return;
+        spawnRate = 2f / GameManager.instance.gameStage;
+
 
         if (spawnTimer > 0f)
         {
