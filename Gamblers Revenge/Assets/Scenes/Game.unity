@@ -473,7 +473,7 @@ GameObject:
   - component: {fileID: 107682195}
   - component: {fileID: 107682194}
   m_Layer: 0
-  m_Name: SpawnManager
+  m_Name: SpawnManagerGhost
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -857,6 +857,53 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 1920, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &375728828
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 375728830}
+  - component: {fileID: 375728829}
+  m_Layer: 0
+  m_Name: SpawnManagerWerewolf
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &375728829
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 375728828}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 704f439459f0b482ab4de3cf99497034, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyPrefab: {fileID: 3081339230334308163, guid: c1e4c597e82c77245a1657cb12420dd0, type: 3}
+  spawnRate: 1.5
+  spawnTimer: 1.5
+--- !u!4 &375728830
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 375728828}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -12.950969, y: 6.4952044, z: 0.15143865}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &415431358
 GameObject:
   m_ObjectHideFlags: 0
@@ -16789,7 +16836,7 @@ AudioSource:
   m_Volume: 1
   m_Pitch: 1
   Loop: 1
-  Mute: 0
+  Mute: 1
   Spatialize: 0
   SpatializePostEffects: 0
   Priority: 128
@@ -61506,6 +61553,63 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1001 &1352046116
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 377956925344404851, guid: c1e4c597e82c77245a1657cb12420dd0, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.7170284
+      objectReference: {fileID: 0}
+    - target: {fileID: 377956925344404851, guid: c1e4c597e82c77245a1657cb12420dd0, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 7.7749176
+      objectReference: {fileID: 0}
+    - target: {fileID: 377956925344404851, guid: c1e4c597e82c77245a1657cb12420dd0, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 377956925344404851, guid: c1e4c597e82c77245a1657cb12420dd0, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 377956925344404851, guid: c1e4c597e82c77245a1657cb12420dd0, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 377956925344404851, guid: c1e4c597e82c77245a1657cb12420dd0, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 377956925344404851, guid: c1e4c597e82c77245a1657cb12420dd0, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 377956925344404851, guid: c1e4c597e82c77245a1657cb12420dd0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 377956925344404851, guid: c1e4c597e82c77245a1657cb12420dd0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 377956925344404851, guid: c1e4c597e82c77245a1657cb12420dd0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3081339230334308163, guid: c1e4c597e82c77245a1657cb12420dd0, type: 3}
+      propertyPath: m_Name
+      value: Werewolf
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c1e4c597e82c77245a1657cb12420dd0, type: 3}
 --- !u!1 &1425434077
 GameObject:
   m_ObjectHideFlags: 0
@@ -61675,6 +61779,7 @@ MonoBehaviour:
   fireRate: 1.5
   fireTimer: 1.5
   swordSlash: {fileID: 356116084920340005, guid: 7e2a5077c297cd94e99dea2744b95979, type: 3}
+<<<<<<< HEAD
   slashSpeed: 30
 --- !u!1 &1469547946
 GameObject:
@@ -68986,6 +69091,10 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+=======
+  slashSpeed: 40
+  anim: {fileID: 72662590}
+>>>>>>> 303ea120b399565f47436e0d3d7e5a3b0310e7b8
 --- !u!1 &1525981550
 GameObject:
   m_ObjectHideFlags: 0
@@ -71658,9 +71767,14 @@ SceneRoots:
   - {fileID: 1229790582}
   - {fileID: 740397666}
   - {fileID: 107682195}
+  - {fileID: 375728830}
   - {fileID: 120021542}
   - {fileID: 1084878090}
   - {fileID: 997977948}
   - {fileID: 1290321421}
   - {fileID: 713356248}
+<<<<<<< HEAD
   - {fileID: 166465871}
+=======
+  - {fileID: 1352046116}
+>>>>>>> 303ea120b399565f47436e0d3d7e5a3b0310e7b8

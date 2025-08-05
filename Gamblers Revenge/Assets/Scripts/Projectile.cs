@@ -6,6 +6,7 @@ public class Projectile : MonoBehaviour
 {
     public float damage = 1f;
     public int maxPierces = 1;
+    [HideInInspector] public float initialSpeed = 20f;
 
     public float lifetime = 3f; // Time before the projectile is destroyed
     private HashSet<Collider2D> _alreadyHit = new HashSet<Collider2D>();
@@ -15,6 +16,7 @@ public class Projectile : MonoBehaviour
     void Awake()
     {
         _piercesLeft = maxPierces;
+        initialSpeed = GetComponent<Rigidbody2D>().velocity.magnitude;
     }
 
     void Start()
