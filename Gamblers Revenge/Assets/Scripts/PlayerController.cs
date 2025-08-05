@@ -31,12 +31,12 @@ public class PlayerController : MonoBehaviour
             Destroy(collision.gameObject);
 
             points += 1;
-            if(points >= maxPoints)
+            if (points >= maxPoints)
             {
                 level += 1;
                 points = 0;
                 maxPoints = (int)Math.Round(maxPoints * 1.5f);
-                curWeapon.fireRate /= 1.5f;
+                OnLevelUp();
 
                 SpawnManager s = FindObjectOfType<SpawnManager>();
                 s.spawnRate *= .8f;
@@ -58,7 +58,7 @@ public class PlayerController : MonoBehaviour
     {
         float horizontalInput = Input.GetAxisRaw("Horizontal");
         float verticalInput = Input.GetAxisRaw("Vertical");
-      
+
         Vector2 inputDir = new Vector2(horizontalInput, verticalInput).normalized; // .normalized makes the vector have a magnitude of 1! it is important!
 
         rb.velocity = inputDir * speed;
@@ -82,4 +82,24 @@ public class PlayerController : MonoBehaviour
             anim.SetFloat("speed", 0f);
         }
     }
+    
+    // Example in PlayerController:
+void OnLevelUp()
+{
+    // 1) generate your 3 options, e.g. via UpgradeManager.GetRandomUpgrades(3):
+    var types = upgradeManager.GetRandomUpgrades(3);
+    // 2) convert to display names:
+    var names = types.Select(t => t.ToString()).ToArray();
+    // 3) show UI and handle choice:
+    UIManager.instance.ShowUpgradeScreen(names, chosenIndex =>
+    {
+        // apply the chosen upgrade:
+        var chosenType = types[chosenIndex];
+        upgradeManager.ApplyUpgrades(new List<UpgradeType> { chosenType },
+                                     weapon: myWeapon,
+                                     player: this,
+                                     projectile: lastFiredProjectile);
+    });
+}
+
 }
