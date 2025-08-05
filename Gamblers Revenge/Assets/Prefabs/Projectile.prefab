@@ -130,8 +130,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1
-  maxPierces: 1
-  lifetime: 3
+  maxPierces: 20
+  lifetime: 100
 --- !u!60 &-8020962582883653098
 PolygonCollider2D:
   m_ObjectHideFlags: 0
