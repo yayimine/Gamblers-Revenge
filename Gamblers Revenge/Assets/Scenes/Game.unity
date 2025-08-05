@@ -46400,7 +46400,8 @@ MonoBehaviour:
   fireRate: 1.5
   fireTimer: 1.5
   swordSlash: {fileID: 356116084920340005, guid: 7e2a5077c297cd94e99dea2744b95979, type: 3}
-  slashSpeed: 30
+  slashSpeed: 40
+  anim: {fileID: 72662590}
 --- !u!1 &1525981550
 GameObject:
   m_ObjectHideFlags: 0

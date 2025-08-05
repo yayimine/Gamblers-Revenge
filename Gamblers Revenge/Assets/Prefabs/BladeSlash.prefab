@@ -29,8 +29,8 @@ Transform:
   m_GameObject: {fileID: 356116084920340005}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.9386, y: 3.5722, z: 0}
-  m_LocalScale: {x: 4.428132, y: 19.51269, z: 1}
+  m_LocalPosition: {x: -3.1134, y: 3.5967, z: 0}
+  m_LocalScale: {x: 5.73942, y: 29.600924, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -187,4 +187,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 1
   maxPierces: -1
-  lifetime: 3
+  lifetime: 0.1
