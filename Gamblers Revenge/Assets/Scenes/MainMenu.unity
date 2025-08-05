@@ -819,6 +819,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   highScore: 0
   score: 0
+  gameStage: 1
+  musicStage: 0
 --- !u!4 &671302300
 Transform:
   m_ObjectHideFlags: 0
