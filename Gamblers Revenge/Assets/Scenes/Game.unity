@@ -46549,7 +46549,7 @@ GameObject:
   - component: {fileID: 1916245787}
   - component: {fileID: 1916245789}
   m_Layer: 0
-  m_Name: Pistol
+  m_Name: SwordSlices
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -46584,7 +46584,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 1
   fireRate: 0.5
-  projectilePrefab: {fileID: 2188269771019750829, guid: 10e5c177fb342492a967d63cec7757cb, type: 3}
+  projectilePrefab: {fileID: 356116084920340005, guid: 03919c5228cfc5a40ac21a5570160555, type: 3}
   shotSpeed: 20
 --- !u!1 &2002852402
 GameObject:
