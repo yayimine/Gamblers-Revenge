@@ -8,6 +8,8 @@ public class GameManager : MonoBehaviour
 
     public float highScore = 0, score = 0; // Variable to store the high score
                                            // Start is called before the first frame update
+
+    public float gameStage = 1;
     
     public void InitializeScore()
     {
@@ -37,6 +39,6 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        gameStage = 1 + score / 50;
     }
 }

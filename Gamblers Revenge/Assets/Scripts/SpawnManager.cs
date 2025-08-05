@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+using UnityEngine.SceneManagement;
+
 public class SpawnManager : MonoBehaviour
 {
     public GameObject enemyPrefab; // Reference to the enemy prefab
@@ -16,6 +18,8 @@ public class SpawnManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        spawnRate = 2 / GameManager.instance.gameStage;
+
         if (spawnTimer > 0f)
         {
             spawnTimer -= Time.deltaTime; // Decrease the timer
@@ -31,13 +35,13 @@ public class SpawnManager : MonoBehaviour
     {
         if (PlayerController.instance == null) return;
         // Generate a random position within the screen bounds
-        Vector3 randomPos = new Vector3(Random.Range(-28f, 8f), Random.Range(-8f, 20f),0f);
+        Vector3 randomPos = new Vector3(Random.Range(-28f, 8f), Random.Range(-8f, 20f), 0f);
         // Instantiate the enemy at the random position
         float distanceToPlayer = (randomPos - PlayerController.instance.transform.position).magnitude;
         if (distanceToPlayer > 10f) // Ensure the enemy spawns at least 5 units away from the player
         {
             Instantiate(enemyPrefab, randomPos, enemyPrefab.transform.rotation);
         }
-        
+
     }
 }
