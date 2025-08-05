@@ -46116,7 +46116,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 5
   fireRate: 1.5
-  swordSlash: {fileID: 0}
+  fireTimer: 1.5
+  sliceRate: 4
+  sliceTimer: 4
+  swordSlash: {fileID: 356116084920340005, guid: 7e2a5077c297cd94e99dea2744b95979, type: 3}
   slashSpeed: 30
 --- !u!1 &1525981550
 GameObject:
@@ -46584,6 +46587,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 1
   fireRate: 0.5
+  fireTimer: 1.5
+  sliceRate: 4
+  sliceTimer: 4
   projectilePrefab: {fileID: 356116084920340005, guid: 03919c5228cfc5a40ac21a5570160555, type: 3}
   shotSpeed: 20
 --- !u!1 &2002852402
