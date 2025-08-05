@@ -8,7 +8,20 @@ public class GameManager : MonoBehaviour
 
     public float highScore = 0, score = 0; // Variable to store the high score
                                            // Start is called before the first frame update
+
+
+    public float gameStage = 1;
+
     
+    void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else Destroy(gameObject);
+    }
     public void InitializeScore()
     {
         score = 0;
@@ -24,19 +37,14 @@ public class GameManager : MonoBehaviour
     }
     void Start()
     {
-        if (instance == null)
-        {
-            instance = this;
-            DontDestroyOnLoad(gameObject); // Make sure the GameManager persists across scenes
-        } else {
-            Destroy(gameObject); // If an instance already exists, destroy this one
-        }
     }
 
-    
+
     // Update is called once per frame
     void Update()
     {
-        
+
+        gameStage = 1 + score / 50;
+
     }
 }

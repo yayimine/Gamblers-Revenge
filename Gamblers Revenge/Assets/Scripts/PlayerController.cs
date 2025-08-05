@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System; // For Math.round
 
 public class PlayerController : MonoBehaviour
 {
@@ -34,7 +35,7 @@ public class PlayerController : MonoBehaviour
             {
                 level += 1;
                 points = 0;
-                maxPoints += 1;
+                maxPoints = (int)Math.Round(maxPoints * 1.5f);
                 curWeapon.fireRate /= 1.5f;
 
                 SpawnManager s = FindObjectOfType<SpawnManager>();

@@ -26,9 +26,10 @@ public class UIManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        scoreText.text = "Score: " + GameManager.instance.score; // Update the score text with the current score
-        highScoreText.text = "High Score: " + GameManager.instance.highScore; // Update the high score text with the stored high score
-        if (PlayerController.instance == null)
+       if (scoreText != null) 
+        scoreText.text = "Score: " + GameManager.instance.score;
+    if (highScoreText != null)
+        highScoreText.text = "High Score: " + GameManager.instance.highScore; if (PlayerController.instance == null)
         {
             hpBar.fillAmount = 0f; // If the player doesn't exist, set the health bar to empty
             return; // If the player doesn't exist, do nothing

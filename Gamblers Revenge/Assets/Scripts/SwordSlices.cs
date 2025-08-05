@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Pistol : Weapon
+public class SwordSlices : Weapon
 {
     public GameObject projectilePrefab; //assign this in the inspector
     public float shotSpeed = 20f;
