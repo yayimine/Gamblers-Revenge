@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
 
 
     public float gameStage = 1;
+    public float musicStage = 0;
 
     
     void Awake()
@@ -43,7 +44,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        
         gameStage = 1 + score / 50;
 
     }
