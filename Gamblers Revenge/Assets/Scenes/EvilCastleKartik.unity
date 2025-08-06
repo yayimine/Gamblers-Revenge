@@ -234,7 +234,7 @@ MonoBehaviour:
   projectilePrefab: {fileID: 0}
   damage: 1
   shotSpeed: 20
-  maxPierces: 1
+  maxPierces: 0
 --- !u!50 &72662588
 Rigidbody2D:
   serializedVersion: 4
@@ -1183,8 +1183,8 @@ GameObject:
   - component: {fileID: 1173101681}
   - component: {fileID: 1173101682}
   m_Layer: 0
-  m_Name: Ground
-  m_TagString: Untagged
+  m_Name: Obstacles
+  m_TagString: Walls
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -16313,7 +16313,7 @@ GameObject:
   - component: {fileID: 2088699676}
   m_Layer: 0
   m_Name: Walls
-  m_TagString: Untagged
+  m_TagString: Walls
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

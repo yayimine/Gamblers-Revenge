@@ -187,4 +187,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 1
   maxPierces: 0
+  initialSpeed: 20
   lifetime: 3

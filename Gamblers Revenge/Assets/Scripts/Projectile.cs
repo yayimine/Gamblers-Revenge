@@ -38,6 +38,12 @@ public class Projectile : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
+
+        if (other.CompareTag("Walls"))
+        {
+            Destroy(gameObject);
+        }
+
         if (!other.CompareTag("Enemy") || _alreadyHit.Contains(other))
             return;
 
