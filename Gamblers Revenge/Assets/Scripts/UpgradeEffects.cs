@@ -1,11 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
-using JetBrains.Annotations;
 using UnityEngine;
 
 public class UpgradeEffects : MonoBehaviour
 {
-
     // Your existing methods:
     public void IncreaseFireRate(Weapon weapon)
     {
@@ -29,32 +27,18 @@ public class UpgradeEffects : MonoBehaviour
 
     public void IncreaseMaxHealth(PlayerController player)
     {
-        Health playerHp = GetComponent<Health>();
-
-        playerHp.maxHp += 1f;
-        playerHp.curHp = playerHp.maxHp;
-
+        player.maxHealth += 1;
+        player.health = player.maxHealth;
     }
 
-    /*public void IncreaseProjectileSize(Projectile projectile)
+    public void IncreaseProjectileSize(Projectile projectile)
     {
-        float multiplier = 1.5f;
-
-        SwordSlices slice = GetComponent<SwordSlices>();
-        Sword slash = GetComponent<Sword>();
-        Vector2 originalSize = transform.localScale;
-        transform.localScale = originalSize * multiplier;
-        projectile.size *= 1.2f;
-    } */
+        projectile.transform.localScale *= 1.2f;
+    }
 
     public void IncreaseProjectileSpeed(Projectile projectile)
     {
-        SwordSlices slice = GetComponent<SwordSlices>();
-        Sword slash = GetComponent<Sword>();
-
-
-        slice.shotSpeed *= 1.2f;
-        slash.slashSpeed *= 1.2f;
+        projectile.initialSpeed *= 1.2f;
     }
 
     // New dispatcher method:
@@ -81,9 +65,9 @@ public class UpgradeEffects : MonoBehaviour
             case UpgradeType.MaxHealth:
                 if (player != null) IncreaseMaxHealth(player);
                 break;
-            /*case UpgradeType.ProjectileSize:
+            case UpgradeType.ProjectileSize:
                 if (projectile != null) IncreaseProjectileSize(projectile);
-                break; */
+                break;
             case UpgradeType.ProjectileSpeed:
                 if (projectile != null) IncreaseProjectileSpeed(projectile);
                 break;
