@@ -8,12 +8,19 @@ public class PlayerController : MonoBehaviour
     public int points = 0;
     public int maxPoints = 5;
     public int level = 1;
+
+    [Header("Movement & Combat")]
+    public float speed = 7f;
     public Weapon curWeapon;
     public GameObject projectilePrefab;
-    public float speed = 7f;
-    public static PlayerController instance;
 
-    public UpgradeManager upgradeManager; // assign in Inspector
+    [Header("Stats (modified by upgrades)")]
+    public float damage = 1f;
+    public float shotSpeed = 20f;
+    public int maxPierces = 1;
+
+    [Header("References")]
+    public static PlayerController instance;
 
     private bool _awaitingUpgrade = false;
     private Rigidbody2D rb;
@@ -21,10 +28,14 @@ public class PlayerController : MonoBehaviour
 
     void Awake()
     {
-        rb = GetComponent<Rigidbody2D>();
+        // singleton
+        if (instance == null) instance = this;
+        else Destroy(gameObject);
+
+        rb   = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+
         GameManager.instance.InitializeScore();
-        instance = this;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -45,60 +56,37 @@ public class PlayerController : MonoBehaviour
     {
         _awaitingUpgrade = true;
 
-        // 1) Apply your static scaling
+        // 1) static scaling
         level++;
         points = 0;
         maxPoints = Mathf.RoundToInt(maxPoints * 1.5f);
         FindObjectOfType<SpawnManager>().spawnRate *= 0.8f;
 
-        // 2) Pick 3 random upgrades
-        var picks = upgradeManager.GetRandomUpgrades(3);
-        var optionNames = picks.Select(u => u.ToString()).ToArray();
+        // 2) pick 3 random upgrades
+        List<UpgradeEffects.UpgradeType> picks = UpgradeEffects.instance.ChooseUpgrades();
+        string[] optionNames = picks.Select(u => u.ToString()).ToArray();
 
-        // 3) Show UI
+        // 3) show UI
         UIManager.instance.ShowUpgradeScreen(optionNames, choice =>
         {
-            // 4) Apply the one upgrade they picked
-            var chosenType = picks[choice];
-            upgradeManager.ApplyUpgrades(
-                new List<UpgradeType> { chosenType },
-                weapon: curWeapon,
-                playerSpeed: this,
-                projectile: projectilePrefab.GetComponent<Projectile>()
-            );
+            // 4) apply the picked upgrade
+            UpgradeEffects.UpgradeType chosen = picks[choice];
+            UpgradeEffects.instance.ApplyUpgrade(chosen);
 
             _awaitingUpgrade = false;
         });
     }
+
     void Update()
     {
-        float horizontalInput = Input.GetAxisRaw("Horizontal");
-        float verticalInput = Input.GetAxisRaw("Vertical");
+        float h = Input.GetAxisRaw("Horizontal");
+        float v = Input.GetAxisRaw("Vertical");
+        Vector2 dir = new Vector2(h, v).normalized;
 
-        Vector2 inputDir = new Vector2(horizontalInput, verticalInput).normalized; // .normalized makes the vector have a magnitude of 1! it is important!
+        rb.velocity = dir * speed;
+        anim.SetFloat("speed", rb.velocity.magnitude);
 
-        rb.velocity = inputDir * speed;
-        anim.SetFloat("speed", Mathf.Abs(rb.velocity.magnitude));
-
-        if (horizontalInput > 0)
-        {
-            anim.SetBool("MovingRight", true);
-        }
-        else if (horizontalInput < 0)
-        {
-            anim.SetBool("MovingRight", false);
-        }
-
-        if (horizontalInput != 0 || verticalInput != 0)
-        {
-            anim.SetFloat("speed", speed);  // or use rb.velocity.magnitude
-        }
-        else
-        {
-            anim.SetFloat("speed", 0f);
-        }
+        if (h > 0)      anim.SetBool("MovingRight", true);
+        else if (h < 0) anim.SetBool("MovingRight", false);
     }
-    
-    // Example in PlayerController:
-
 }

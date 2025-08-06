@@ -5,7 +5,11 @@ using UnityEngine;
 public class SwordSlices : Weapon
 {
     public GameObject projectilePrefab; //assign this in the inspector
-    public float shotSpeed = 20f;
+    float shotSpeed = 0f;
+    void Start()
+    {
+        shotSpeed = PlayerController.instance.shotSpeed;
+    }
     public override void Attack()
     {
         if (Input.GetMouseButton(0) == false)
