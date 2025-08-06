@@ -6,11 +6,11 @@ using UnityEngine;
 using UnityEngine.UI; // Import the UI namespace to work with UI elements
 using UnityEngine.SceneManagement; // Import the SceneManagement namespace to load scenes
 
-public class SpawnManager : MonoBehaviour
+public class SpawnManagerWerewolf : MonoBehaviour
 {
     public GameObject enemyPrefab; // Reference to the enemy prefab
-    public float spawnRate = 1.5f;
-    public float spawnTimer = 1.5f;
+    public float spawnRate = 10f;
+    public float spawnTimer = 10f;
     // Start is called before the first frame update
 
     
@@ -23,7 +23,7 @@ public class SpawnManager : MonoBehaviour
     void Update()
     {
         if (GameManager.instance == null) return;
-        spawnRate = 2f / GameManager.instance.gameStage;
+        spawnRate = 10f / GameManager.instance.gameStage;
 
 
         if (spawnTimer > 0f)

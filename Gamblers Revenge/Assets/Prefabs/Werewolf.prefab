@@ -99,7 +99,7 @@ PolygonCollider2D:
   m_GameObject: {fileID: 3081339230334308163}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 181cddfb8ad0a3f40a22d462c8cc8e9e, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
