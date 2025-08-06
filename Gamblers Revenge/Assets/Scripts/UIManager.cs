@@ -33,10 +33,10 @@ public class UIManager : MonoBehaviour
     void Update()
     {
         // Update score & high score
-        if (scoreText != null)
+        /*if (scoreText != null)
             scoreText.text = "Score: " + GameManager.instance.score;
         if (highScoreText != null)
-            highScoreText.text = "High Score: " + GameManager.instance.highScore;
+            highScoreText.text = "High Score: " + GameManager.instance.highScore;*/
 
         // Update HUD
         if (PlayerController.instance == null)

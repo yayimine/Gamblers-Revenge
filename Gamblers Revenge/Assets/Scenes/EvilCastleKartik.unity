@@ -275,7 +275,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHp: 10
-  curHp: 0
+  curHp: 10
 --- !u!95 &72662590
 Animator:
   serializedVersion: 5
