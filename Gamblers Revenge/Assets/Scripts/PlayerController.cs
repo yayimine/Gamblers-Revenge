@@ -69,14 +69,14 @@ public class PlayerController : MonoBehaviour
         string[] optionNames = picks.Select(u => u.ToString()).ToArray();
 
         // 3) show UI
-        /*UIManager.instance.ShowUpgradeScreen(optionNames, choice =>
+        UpgradeManager.instance.ShowUpgradeScreen(optionNames, choice =>
         {
             // 4) apply the picked upgrade
             UpgradeEffects.UpgradeType chosen = picks[choice];
             UpgradeEffects.instance.ApplyUpgrade(chosen);
 
             _awaitingUpgrade = false;
-        });*/
+        });
     }
 
     void Update()
