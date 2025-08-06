@@ -60,7 +60,9 @@ public class PlayerController : MonoBehaviour
         level++;
         points = 0;
         maxPoints = Mathf.RoundToInt(maxPoints * 1.5f);
-        FindObjectOfType<SpawnManager>().spawnRate *= 0.8f;
+        FindObjectOfType<SpawnManagerWerewolf>().spawnRate *= 0.8f;
+        FindObjectOfType<SpawnManagerGolemite>().spawnRate *= 0.8f;
+        FindObjectOfType<SpawnManagerGhost>().spawnRate *= 0.8f;
 
         // 2) pick 3 random upgrades
         List<UpgradeEffects.UpgradeType> picks = UpgradeEffects.instance.ChooseUpgrades();

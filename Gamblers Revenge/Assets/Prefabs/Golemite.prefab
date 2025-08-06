@@ -73,14 +73,14 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: -2253911629886400664, guid: d856bb2adf7ac23488586aad6a746407, type: 3}
+      insertIndex: 2
+      addedObject: {fileID: 7737801011883949904}
+    - targetCorrespondingSourceObject: {fileID: -2253911629886400664, guid: d856bb2adf7ac23488586aad6a746407, type: 3}
+      insertIndex: 3
+      addedObject: {fileID: -2622331339988057453}
+    - targetCorrespondingSourceObject: {fileID: -2253911629886400664, guid: d856bb2adf7ac23488586aad6a746407, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3319800391275645442}
-    - targetCorrespondingSourceObject: {fileID: -2253911629886400664, guid: d856bb2adf7ac23488586aad6a746407, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: -4481436615165290785}
-    - targetCorrespondingSourceObject: {fileID: -2253911629886400664, guid: d856bb2adf7ac23488586aad6a746407, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: -2622331339988057453}
     - targetCorrespondingSourceObject: {fileID: -2253911629886400664, guid: d856bb2adf7ac23488586aad6a746407, type: 3}
       insertIndex: -1
       addedObject: {fileID: -565033018637690469}
@@ -90,22 +90,8 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: -2253911629886400664, guid: d856bb2adf7ac23488586aad6a746407, type: 3}
   m_PrefabInstance: {fileID: 7909499051671713313}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &3319800391275645442
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 971739766683967817}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2298e14b88e264e32a8825bf8e2f74fe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHp: 25
-  curHp: 0
---- !u!60 &-4481436615165290785
-PolygonCollider2D:
+--- !u!61 &7737801011883949904
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -136,7 +122,7 @@ PolygonCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.010000005, y: 0.53}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5208333, y: -0.65217394}
@@ -146,26 +132,9 @@ PolygonCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: 0.21, y: 0.64}
-      - {x: 0.17999999, y: 0.66999996}
-      - {x: 0.049999997, y: 0.76}
-      - {x: -0.02, y: 0.76}
-      - {x: -0.089999996, y: 0.69}
-      - {x: -0.19999999, y: 0.69}
-      - {x: -0.25, y: 0.59}
-      - {x: -0.25, y: 0.31}
-      - {x: -0.22999999, y: 0.29999998}
-      - {x: -0.16, y: 0.29999998}
-      - {x: -0.12, y: 0.35}
-      - {x: -0.08, y: 0.29999998}
-      - {x: 0.04, y: 0.29999998}
-      - {x: 0.11, y: 0.32999998}
-      - {x: 0.17, y: 0.32}
-      - {x: 0.22999999, y: 0.34}
-      - {x: 0.22999999, y: 0.59999996}
-  m_UseDelaunayMesh: 0
+  serializedVersion: 2
+  m_Size: {x: 0.48, y: 0.46000004}
+  m_EdgeRadius: 0
 --- !u!50 &-2622331339988057453
 Rigidbody2D:
   serializedVersion: 4
@@ -193,6 +162,20 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &3319800391275645442
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 971739766683967817}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2298e14b88e264e32a8825bf8e2f74fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHp: 25
+  curHp: 0
 --- !u!114 &-565033018637690469
 MonoBehaviour:
   m_ObjectHideFlags: 0

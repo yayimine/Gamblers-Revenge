@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 377956925344404851}
   - component: {fileID: 77053825270968381}
-  - component: {fileID: 5435035029669601296}
+  - component: {fileID: 4996489879617063363}
   - component: {fileID: 6815397464114040592}
   - component: {fileID: 1502946292164648250}
   - component: {fileID: -8599124715398322879}
@@ -89,8 +89,8 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!60 &5435035029669601296
-PolygonCollider2D:
+--- !u!61 &4996489879617063363
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -98,7 +98,7 @@ PolygonCollider2D:
   m_GameObject: {fileID: 3081339230334308163}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 181cddfb8ad0a3f40a22d462c8cc8e9e, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -121,7 +121,7 @@ PolygonCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.00074940175, y: -0.044981718}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -131,23 +131,9 @@ PolygonCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: 0.16169663, y: -0.09993118}
-      - {x: 0.16275078, y: -0.006799644}
-      - {x: 0.14963424, y: 0.086764246}
-      - {x: 0.07704245, y: 0.09566266}
-      - {x: 0.05097885, y: 0.18524812}
-      - {x: 0.014457386, y: 0.22170559}
-      - {x: -0.11180191, y: 0.15882404}
-      - {x: -0.15214393, y: -0.040333044}
-      - {x: -0.15880425, y: -0.17011574}
-      - {x: -0.1305715, y: -0.24838236}
-      - {x: -0.10064329, y: -0.28871688}
-      - {x: 0.05604922, y: -0.29739645}
-      - {x: 0.08082187, y: -0.23153852}
-      - {x: 0.10675746, y: -0.17300726}
-  m_UseDelaunayMesh: 0
+  serializedVersion: 2
+  m_Size: {x: 0.30252713, y: 0.49106443}
+  m_EdgeRadius: 0
 --- !u!50 &6815397464114040592
 Rigidbody2D:
   serializedVersion: 4
