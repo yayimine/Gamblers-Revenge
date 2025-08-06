@@ -11,7 +11,7 @@ public class MainMenu : MonoBehaviour
 
     public void StartButtonPressed()
     {
-        SceneManager.LoadScene("YANGSCENE"); // Load the game scene when the button is pressed
+        SceneManager.LoadScene("EvilCastleKartik"); // Load the game scene when the button is pressed
     }
     // Start is called before the first frame update
     void Start()
