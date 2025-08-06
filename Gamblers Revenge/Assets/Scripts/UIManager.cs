@@ -106,6 +106,8 @@ public class UIManager : MonoBehaviour
             upgradeButtonTexts[i].text = options[i];
         }
 
+        Time.timeScale = 0f; // Pause the game
+
         upgradeScreen.SetActive(true);
     }
 
