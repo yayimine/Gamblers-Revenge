@@ -10,11 +10,11 @@ public class SwordSlices : Weapon
     {
         shotSpeed = PlayerController.instance.shotSpeed;
     }
-    public override void Attack()
+    public override bool Attack()
     {
         if (Input.GetMouseButton(0) == false)
         {
-            return;
+            return false;
         }
         Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         Vector2 shootDir = mousePos - (Vector2)transform.position;
@@ -34,6 +34,7 @@ public class SwordSlices : Weapon
         Rigidbody2D rb = g.GetComponent<Rigidbody2D>();
         rb.velocity = shootDir.normalized * shotSpeed;
         g.GetComponent<Projectile>().damage = damage;
+        return true;
     }
 
 }
