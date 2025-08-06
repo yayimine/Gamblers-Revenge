@@ -188,7 +188,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   loot: {fileID: 7919791859526016229, guid: 1e4d1ca1eb34d45f48a10aab5ad19891, type: 3}
-  speed: 2
+  speed: 3
 --- !u!114 &-8599124715398322879
 MonoBehaviour:
   m_ObjectHideFlags: 0

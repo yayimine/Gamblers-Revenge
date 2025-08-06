@@ -645,6 +645,53 @@ MonoBehaviour:
   upgradeScreen: {fileID: 0}
   upgradeButtons: []
   upgradeButtonTexts: []
+--- !u!1 &279122013
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 279122015}
+  - component: {fileID: 279122014}
+  m_Layer: 0
+  m_Name: SpawnGolemite
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &279122014
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 279122013}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 704f439459f0b482ab4de3cf99497034, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyPrefab: {fileID: 971739766683967817, guid: d7181173528fed74ca94e13c8423876f, type: 3}
+  spawnRate: 20
+  spawnTimer: 20
+--- !u!4 &279122015
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 279122013}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -12.950969, y: 6.4952044, z: 0.15143865}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &317336226
 GameObject:
   m_ObjectHideFlags: 0
@@ -1483,6 +1530,71 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &763409713
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -565033018637690469, guid: d7181173528fed74ca94e13c8423876f, type: 3}
+      propertyPath: loot
+      value: 
+      objectReference: {fileID: 7919791859526016229, guid: 1e4d1ca1eb34d45f48a10aab5ad19891, type: 3}
+    - target: {fileID: -565033018637690469, guid: d7181173528fed74ca94e13c8423876f, type: 3}
+      propertyPath: speed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 41001496213850412, guid: d7181173528fed74ca94e13c8423876f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -6.4628677
+      objectReference: {fileID: 0}
+    - target: {fileID: 41001496213850412, guid: d7181173528fed74ca94e13c8423876f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -3.2349548
+      objectReference: {fileID: 0}
+    - target: {fileID: 41001496213850412, guid: d7181173528fed74ca94e13c8423876f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 41001496213850412, guid: d7181173528fed74ca94e13c8423876f, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 41001496213850412, guid: d7181173528fed74ca94e13c8423876f, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 41001496213850412, guid: d7181173528fed74ca94e13c8423876f, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 41001496213850412, guid: d7181173528fed74ca94e13c8423876f, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 41001496213850412, guid: d7181173528fed74ca94e13c8423876f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 41001496213850412, guid: d7181173528fed74ca94e13c8423876f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 41001496213850412, guid: d7181173528fed74ca94e13c8423876f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 971739766683967817, guid: d7181173528fed74ca94e13c8423876f, type: 3}
+      propertyPath: m_Name
+      value: Golemite
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d7181173528fed74ca94e13c8423876f, type: 3}
 --- !u!1 &997977945
 GameObject:
   m_ObjectHideFlags: 0
@@ -8659,6 +8771,7 @@ Transform:
   - {fileID: 1692099643}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< Updated upstream
 --- !u!1001 &1290321421
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8740,6 +8853,8 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: -8435245712485981826, guid: d856bb2adf7ac23488586aad6a746407, type: 3}
+=======
+>>>>>>> Stashed changes
 --- !u!1 &1306357207
 GameObject:
   m_ObjectHideFlags: 0
@@ -33142,8 +33257,9 @@ SceneRoots:
   - {fileID: 740397666}
   - {fileID: 107682195}
   - {fileID: 1050931217}
+  - {fileID: 279122015}
   - {fileID: 120021542}
   - {fileID: 1084878090}
   - {fileID: 997977948}
-  - {fileID: 1290321421}
   - {fileID: 713356248}
+  - {fileID: 763409713}
