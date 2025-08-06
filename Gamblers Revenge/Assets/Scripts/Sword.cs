@@ -5,8 +5,7 @@ using UnityEngine;
 public class Sword : Weapon
 {
     public GameObject swordSlash;
-    public float slashSpeed = 40f;
-
+    float slashSpeed = 0f; 
     public Animator anim;
 
     private void Awake()
@@ -14,6 +13,11 @@ public class Sword : Weapon
         damage = 5f;
         fireRate = 3f;
         fireTimer = 3f;
+    }
+
+    void Start()
+    {
+        slashSpeed = PlayerController.instance.shotSpeed*2;
     }
 
 
@@ -40,7 +44,7 @@ public class Sword : Weapon
         rb.velocity = shootDir.normalized * slashSpeed;
         slash.GetComponent<Projectile>().damage = damage;
 
-        
+
 
 
     }
