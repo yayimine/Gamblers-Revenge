@@ -12,10 +12,10 @@ GameObject:
   - component: {fileID: 77053825270968381}
   - component: {fileID: 3470207731640137026}
   - component: {fileID: 6815397464114040592}
-  - component: {fileID: 1502946292164648250}
   - component: {fileID: -8599124715398322879}
-  - component: {fileID: -5520760679029265455}
   - component: {fileID: 3318637900624810053}
+  - component: {fileID: -6683694606115911599}
+  - component: {fileID: -6063083815299604069}
   m_Layer: 0
   m_Name: Werewolf
   m_TagString: Enemy
@@ -162,20 +162,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &1502946292164648250
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3081339230334308163}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d615631a8aa540e28cd3530c61cc9e2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  loot: {fileID: 7919791859526016229, guid: 1e4d1ca1eb34d45f48a10aab5ad19891, type: 3}
-  speed: 4
 --- !u!114 &-8599124715398322879
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -190,20 +176,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHp: 5
   curHp: 0
---- !u!114 &-5520760679029265455
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3081339230334308163}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2095e3e80835ebb4f949e6c17683553c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  loot: {fileID: 7919791859526016229, guid: 1e4d1ca1eb34d45f48a10aab5ad19891, type: 3}
-  speed: 5
 --- !u!95 &3318637900624810053
 Animator:
   serializedVersion: 5
@@ -225,3 +197,67 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &-6683694606115911599
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3081339230334308163}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 073797afb82c5a1438f328866b10b3f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ComponentVersion: 1
+  m_LightType: 3
+  m_BlendStyleIndex: 0
+  m_FalloffIntensity: 0.5
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Intensity: 6
+  m_LightVolumeIntensity: 1
+  m_LightVolumeIntensityEnabled: 0
+  m_ApplyToSortingLayers: 
+  m_LightCookieSprite: {fileID: 0}
+  m_DeprecatedPointLightCookieSprite: {fileID: 0}
+  m_LightOrder: 0
+  m_AlphaBlendOnOverlap: 0
+  m_OverlapOperation: 0
+  m_NormalMapDistance: 3
+  m_NormalMapQuality: 2
+  m_UseNormalMap: 0
+  m_ShadowIntensityEnabled: 0
+  m_ShadowIntensity: 0.75
+  m_ShadowVolumeIntensityEnabled: 0
+  m_ShadowVolumeIntensity: 0.75
+  m_LocalBounds:
+    m_Center: {x: 0, y: 0, z: 0}
+    m_Extent: {x: 0, y: 0, z: 0}
+  m_PointLightInnerAngle: 360
+  m_PointLightOuterAngle: 360
+  m_PointLightInnerRadius: 0
+  m_PointLightOuterRadius: 1
+  m_ShapeLightParametricSides: 5
+  m_ShapeLightParametricAngleOffset: 0
+  m_ShapeLightParametricRadius: 1
+  m_ShapeLightFalloffSize: 0.5
+  m_ShapeLightFalloffOffset: {x: 0, y: 0}
+  m_ShapePath:
+  - {x: -0.5, y: -0.5, z: 0}
+  - {x: 0.5, y: -0.5, z: 0}
+  - {x: 0.5, y: 0.5, z: 0}
+  - {x: -0.5, y: 0.5, z: 0}
+--- !u!114 &-6063083815299604069
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3081339230334308163}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2095e3e80835ebb4f949e6c17683553c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  loot: {fileID: 7919791859526016229, guid: 1e4d1ca1eb34d45f48a10aab5ad19891, type: 3}
+  speed: 5

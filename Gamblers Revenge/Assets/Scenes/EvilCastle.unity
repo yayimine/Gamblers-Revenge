@@ -234,7 +234,7 @@ MonoBehaviour:
   projectilePrefab: {fileID: 0}
   damage: 1
   shotSpeed: 20
-  maxPierces: 1
+  maxPierces: 0
 --- !u!50 &72662588
 Rigidbody2D:
   serializedVersion: 4
@@ -388,7 +388,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 279122015}
-  - component: {fileID: 279122014}
+  - component: {fileID: 279122016}
   m_Layer: 0
   m_Name: SpawnGolemite
   m_TagString: Untagged
@@ -396,21 +396,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &279122014
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 279122013}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 704f439459f0b482ab4de3cf99497034, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 971739766683967817, guid: d7181173528fed74ca94e13c8423876f, type: 3}
-  spawnRate: 20
-  spawnTimer: 20
 --- !u!4 &279122015
 Transform:
   m_ObjectHideFlags: 0
@@ -426,6 +411,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &279122016
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 279122013}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38914db573f6315499ea17a00d4a8e4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyPrefab: {fileID: 971739766683967817, guid: d7181173528fed74ca94e13c8423876f, type: 3}
+  spawnRate: 30
+  spawnTimer: 30
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -1025,7 +1025,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1050931217}
-  - component: {fileID: 1050931216}
+  - component: {fileID: 1050931218}
   m_Layer: 0
   m_Name: SpawnWerewolf
   m_TagString: Untagged
@@ -1033,21 +1033,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1050931216
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1050931215}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 704f439459f0b482ab4de3cf99497034, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 3081339230334308163, guid: c1e4c597e82c77245a1657cb12420dd0, type: 3}
-  spawnRate: 8
-  spawnTimer: 8
 --- !u!4 &1050931217
 Transform:
   m_ObjectHideFlags: 0
@@ -1063,6 +1048,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1050931218
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1050931215}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2aa469bca70a8840ba80503b0d16a19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyPrefab: {fileID: 3081339230334308163, guid: c1e4c597e82c77245a1657cb12420dd0, type: 3}
+  spawnRate: 10
+  spawnTimer: 10
 --- !u!1 &1084878087
 GameObject:
   m_ObjectHideFlags: 0
