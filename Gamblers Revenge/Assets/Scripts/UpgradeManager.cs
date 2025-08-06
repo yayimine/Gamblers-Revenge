@@ -8,6 +8,7 @@ using TMPro;
 
 public class UpgradeManager : MonoBehaviour
 {
+     public static UpgradeManager instance;
     [Header("Upgrade Screen")]
     public GameObject upgradeScreen;
     [Tooltip("Assign exactly 3 buttons here")]

@@ -13,10 +13,6 @@ public class UIManager : MonoBehaviour
     public Image hpBar;
     public TMP_Text levelText, pointsText, healthText;
     Health playerHealth;
-
-    // A callback that your game logic can set to handle the chosen upgrade (0‒2)
-    
-
     void Awake()
     {
         // singleton
