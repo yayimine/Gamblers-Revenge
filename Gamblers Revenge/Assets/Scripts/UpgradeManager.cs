@@ -8,12 +8,16 @@ using TMPro;
 
 public class UpgradeManager : MonoBehaviour
 {
+    public static UpgradeManager instance;
+
     [Header("Upgrade Screen")]
     public GameObject upgradeScreen;
     [Tooltip("Assign exactly 3 buttons here")]
     public Button[] upgradeButtons;           // size = 3
     [Tooltip("The Text component on each of those buttons")]
     public TMP_Text[] upgradeButtonTexts;     // size = 3
+
+    private Action<int> onUpgradeChosen;
 
     void Awake()
     {
@@ -62,7 +66,12 @@ public class UpgradeManager : MonoBehaviour
         // hide UI
         upgradeScreen.SetActive(false);
 
+        // resume the game
+        Time.timeScale = 1f;
+
         // invoke the callback
         onUpgradeChosen?.Invoke(idx);
+
+        onUpgradeChosen = null;
     }
 }
