@@ -4,6 +4,21 @@ using UnityEngine;
 
 public class Health : MonoBehaviour
 {
+    //singleton
+    public static Health instance; // Singleton instance of the Health class
+    public static Health GetInstance()
+    {
+        if (instance == null)
+        {
+            instance = FindObjectOfType<Health>();
+            if (instance == null)
+            {
+                GameObject obj = new GameObject("Health");
+                instance = obj.AddComponent<Health>();
+            }
+        }
+        return instance;
+    }
     public float maxHp = 10f; // Maximum health of the object
     public float curHp = 0f;
     // Start is called before the first frame update

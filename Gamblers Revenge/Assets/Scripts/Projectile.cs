@@ -1,50 +1,54 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
-    public float damage = 1f;
-    public int maxPierces = 1;
-    [HideInInspector] public float initialSpeed = 20f;
+    // make these public so other scripts (like Sword) can assign to them
+    [HideInInspector] public float damage;
+    [HideInInspector] public int maxPierces;
 
-    public float lifetime = 3f; // Time before the projectile is destroyed
+    [HideInInspector] public float initialSpeed = 20f;
+    public float lifetime = 3f;
+
     private HashSet<Collider2D> _alreadyHit = new HashSet<Collider2D>();
     private int _piercesLeft;
 
-
     void Awake()
     {
+        // if nobody set them externally, fall back to the player's defaults
+        if (damage <= 0f)
+            damage = PlayerController.instance.damage;
+
+        if (maxPierces <= 0)
+            maxPierces = PlayerController.instance.maxPierces;
+
         _piercesLeft = maxPierces;
         initialSpeed = GetComponent<Rigidbody2D>().velocity.magnitude;
     }
 
     void Start()
     {
-        Destroy(gameObject, lifetime); // Destroy the projectile after a certain time
-                                       //rotate opposite to player
-        transform.position = new Vector3(transform.position.x, //take the player's x position
-transform.position.y, //take the player's y position
-PlayerController.instance.transform.position.z); //keep the original z position for the camera
+        Destroy(gameObject, lifetime);
+
+        // keep the same z-depth as the player (if you really need it)
+        Vector3 pos = transform.position;
+        pos.z = PlayerController.instance.transform.position.z;
+        transform.position = pos;
     }
-    
+
     void OnTriggerEnter2D(Collider2D other)
     {
-
-        // only hit things tagged "Enemy"
-        if (!other.CompareTag("Enemy")) return;
-        if (_alreadyHit.Contains(other)) return;
+        if (!other.CompareTag("Enemy") || _alreadyHit.Contains(other))
+            return;
 
         _alreadyHit.Add(other);
 
-        // destroy when out of pierces
-        if (_piercesLeft == 0)
-        {
+        // apply `damage` to the enemy here, e.g.:
+        // other.GetComponent<Enemy>()?.TakeDamage(damage);
+
+        if (_piercesLeft <= 0)
             Destroy(gameObject);
-        } else
-        {
+        else
             _piercesLeft--;
-        }
     }
 }
-

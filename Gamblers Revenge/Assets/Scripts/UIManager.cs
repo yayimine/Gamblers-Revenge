@@ -1,5 +1,4 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -23,11 +22,11 @@ public class UIManager : MonoBehaviour
     [Header("Upgrade Screen")]
     public GameObject upgradeScreen;
     [Tooltip("Assign exactly 3 buttons here")]
-    public Button[] upgradeButtons;
+    public Button[] upgradeButtons;           // size = 3
     [Tooltip("The Text component on each of those buttons")]
-    public TMP_Text[] upgradeButtonTexts;
+    public TMP_Text[] upgradeButtonTexts;     // size = 3
 
-    // A callback that your game logic can set to handle the chosen upgrade
+    // A callback that your game logic can set to handle the chosen upgrade (0‒2)
     private Action<int> onUpgradeChosen;
 
     void Awake()
@@ -47,9 +46,14 @@ public class UIManager : MonoBehaviour
         restartButton.onClick.AddListener(Restart);
 
         // Upgrade screen setup
-        /*upgradeScreen.SetActive(false);
-        foreach (var btn in upgradeButtons)
-            btn.onClick.AddListener(() => OnUpgradeButtonClicked(btn)); */
+        upgradeScreen.SetActive(false);
+
+        // Wire up each upgrade button to its index
+        for (int i = 0; i < upgradeButtons.Length; i++)
+        {
+            int idx = i;  // capture loop variable
+            upgradeButtons[i].onClick.AddListener(() => OnUpgradeButton(idx));
+        }
     }
 
     void Update()
@@ -66,23 +70,25 @@ public class UIManager : MonoBehaviour
             hpBar.fillAmount = 0f;
             return;
         }
+
         hpBar.fillAmount = playerHealth.curHp / playerHealth.maxHp;
         levelText.text = "Level: " + PlayerController.instance.level;
         pointsText.text = "Points: " 
-            + PlayerController.instance.points 
-            + "/" + PlayerController.instance.maxPoints;
+                            + PlayerController.instance.points 
+                            + "/" + PlayerController.instance.maxPoints;
         healthText.text = $"{playerHealth.curHp}/{playerHealth.maxHp}";
     }
 
-    // Public: call this when the player dies
     public void ShowLoseScreen()
     {
         loseScreen.SetActive(true);
     }
 
-    // Public: call this when the player levels up and you want to show 3 upgrade choices
-    // `options` should be exactly 3 strings describing each upgrade,
-    // `onChosen` is your callback(0‒2) to actually apply it.
+    /// <summary>
+    /// Call this when the player levels up.
+    /// `options` must be length == upgradeButtons.Length.
+    /// `onChosen` will be invoked with the index (0‒2).
+    /// </summary>
     public void ShowUpgradeScreen(string[] options, Action<int> onChosen)
     {
         if (options.Length != upgradeButtons.Length)
@@ -91,33 +97,25 @@ public class UIManager : MonoBehaviour
             return;
         }
 
-        // store callback
         onUpgradeChosen = onChosen;
 
-        // populate button texts and enable
+        // Populate button texts and ensure they’re active
         for (int i = 0; i < upgradeButtons.Length; i++)
         {
             upgradeButtons[i].gameObject.SetActive(true);
             upgradeButtonTexts[i].text = options[i];
         }
 
-        // show UI
         upgradeScreen.SetActive(true);
     }
 
-    // Internal handler for any upgrade button
-    private void OnUpgradeButtonClicked(Button btn)
+    private void OnUpgradeButton(int idx)
     {
-        // find index
-        int idx = Array.IndexOf(upgradeButtons, btn);
-        if (idx < 0) return;
-
-        // hide upgrade UI
+        // hide UI
         upgradeScreen.SetActive(false);
 
-        // invoke game logic
+        // invoke the callback
         onUpgradeChosen?.Invoke(idx);
-        onUpgradeChosen = null;
     }
 
     public void Restart()

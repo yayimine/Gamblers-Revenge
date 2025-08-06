@@ -1,79 +1,108 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class UpgradeEffects : MonoBehaviour
 {
-    // Your existing methods:
-    public void IncreaseFireRate(Weapon weapon)
+
+    //singleton instance
+    public static UpgradeEffects instance;
+    private void Awake()
     {
-        weapon.fireRate /= 1.2f;
+        // Ensure only one instance exists
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
+    public enum UpgradeType
+    {
+        FireRate,
+        Damage,
+        Speed,
+        Pierce,
+        MaxHealth
     }
 
-    public void IncreaseDamage(Weapon weapon)
+    public void IncreaseFireRate()
     {
-        weapon.damage *= 1.2f;
+        PlayerController.instance.shotSpeed /= 1.2f;
     }
 
-    public void IncreaseSpeed(PlayerController player)
+    public void IncreaseDamage()
     {
-        player.speed *= 1.2f;
+        PlayerController.instance.damage *= 1.2f;
     }
 
-    public void IncreasePierce(Projectile projectile)
+    public void IncreaseSpeed()
     {
-        projectile.maxPierces += 1;
+        PlayerController.instance.speed *= 1.2f;
     }
 
-    public void IncreaseMaxHealth(Health playerHp)
+    public void IncreasePierce()
     {
-        playerHp.maxHp += 1;
-        playerHp.curHp = playerHp.maxHp;
+        // assuming maxPierces is an instance field
+        PlayerController.instance.maxPierces += 1;
     }
 
-    public void IncreaseProjectileSize(Projectile projectile)
+    public void IncreaseMaxHealth()
     {
-        projectile.transform.localScale *= 1.2f;
+        Health.instance.maxHp += 1;
+        Health.instance.curHp += 1;
     }
 
-    public void IncreaseProjectileSpeed(Projectile projectile)
+    public void ApplyUpgrade(UpgradeType upgradeType)
     {
-        projectile.initialSpeed *= 1.2f;
-    }
-
-    // New dispatcher method:
-    public void ApplyUpgrade(
-        UpgradeType type,
-        Weapon weapon = null,
-        PlayerController player = null,
-        Projectile projectile = null)
-    {
-        switch (type)
+        switch (upgradeType)
         {
             case UpgradeType.FireRate:
-                if (weapon != null) IncreaseFireRate(weapon);
+                IncreaseFireRate();
                 break;
             case UpgradeType.Damage:
-                if (weapon != null) IncreaseDamage(weapon);
+                IncreaseDamage();
                 break;
             case UpgradeType.Speed:
-                if (player != null) IncreaseSpeed(player);
+                IncreaseSpeed();
                 break;
             case UpgradeType.Pierce:
-                if (projectile != null) IncreasePierce(projectile);
+                IncreasePierce();
                 break;
-            /*case UpgradeType.MaxHealth:
-                if (playerHp != null) IncreaseMaxHealth(playerHp);
-                break;*/
-            case UpgradeType.ProjectileSize:
-                if (projectile != null) IncreaseProjectileSize(projectile);
-                break;
-            case UpgradeType.ProjectileSpeed:
-                if (projectile != null) IncreaseProjectileSpeed(projectile);
+            case UpgradeType.MaxHealth:
+                IncreaseMaxHealth();
                 break;
             default:
-                Debug.LogWarning($"Unhandled upgrade type: {type}");
+                Debug.LogWarning("Unhandled upgrade type: " + upgradeType);
                 break;
         }
     }
+
+    public List<UpgradeType> ChooseUpgrades()
+    {
+        var availableUpgrades = new List<UpgradeType>
+        {
+            UpgradeType.FireRate, UpgradeType.FireRate, UpgradeType.FireRate,
+            UpgradeType.FireRate, UpgradeType.FireRate, UpgradeType.FireRate,
+            UpgradeType.Damage,   UpgradeType.Damage,   UpgradeType.Damage,
+            UpgradeType.Damage,   UpgradeType.Damage,   UpgradeType.Damage,
+            UpgradeType.Speed,    UpgradeType.Speed,    UpgradeType.Speed,
+            UpgradeType.MaxHealth, UpgradeType.MaxHealth, UpgradeType.MaxHealth,
+            UpgradeType.Pierce
+        };
+
+        var chosenUpgrades = new List<UpgradeType>();
+        while (chosenUpgrades.Count < 3)
+        {
+            int index = Random.Range(0, availableUpgrades.Count);
+            var pick = availableUpgrades[index];
+            if (!chosenUpgrades.Contains(pick))
+                chosenUpgrades.Add(pick);
+        }
+        return chosenUpgrades;
+    }
+
+
 }
