@@ -22,11 +22,11 @@ public class Sword : Weapon
 
 
     // Start is called before the first frame update
-    public override void Attack()
+    public override bool Attack()
     {
         if (Input.GetMouseButton(1) == false)
         {
-            return;
+            return false;
         }
         //anim.SetTrigger("SwordSlash");
         Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -44,8 +44,6 @@ public class Sword : Weapon
         rb.velocity = shootDir.normalized * slashSpeed;
         slash.GetComponent<Projectile>().damage = damage;
 
-
-
-
+        return true;
     }
 }

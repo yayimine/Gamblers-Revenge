@@ -8,9 +8,10 @@ public class Weapon : MonoBehaviour
     public float fireRate = 1.5f;
     public float fireTimer = 1.5f;
 
-    public virtual void Attack()
+    public virtual bool Attack()
     {
         print("Parent attack!");
+        return true;
     }
 
 
@@ -23,10 +24,10 @@ public class Weapon : MonoBehaviour
         }
         else
         {
-            
-                Attack(); // Call the attack method
-                fireTimer = fireRate; // Reset the timer
-            
+            if (Attack()) // Call the attack method
+            {
+                fireTimer = fireRate; // Reset the timer only if attack was performed
+            }
         }
        
     }
