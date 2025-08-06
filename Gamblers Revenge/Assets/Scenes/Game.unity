@@ -365,9 +365,10 @@ MonoBehaviour:
   level: 1
   speed: 5
   curWeapon: {fileID: 1916245789}
-  projectilePrefab: {fileID: 0}
-  speed: 5
-  upgradeManager: {fileID: 0}
+  projectilePrefab: {fileID: 356116084920340005, guid: 03919c5228cfc5a40ac21a5570160555, type: 3}
+  damage: 1
+  shotSpeed: 20
+  maxPierces: 1
 --- !u!50 &72662588
 Rigidbody2D:
   serializedVersion: 4
@@ -1877,18 +1878,6 @@ PrefabInstance:
     - target: {fileID: -2253911629886400664, guid: 745fffc2dfe933b468b2fa823c85d93e, type: 3}
       propertyPath: m_Name
       value: laser (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 3626916397498700004, guid: 745fffc2dfe933b468b2fa823c85d93e, type: 3}
-      propertyPath: m_Color.b
-      value: 0.087006025
-      objectReference: {fileID: 0}
-    - target: {fileID: 3626916397498700004, guid: 745fffc2dfe933b468b2fa823c85d93e, type: 3}
-      propertyPath: m_Color.g
-      value: 0.087006025
-      objectReference: {fileID: 0}
-    - target: {fileID: 3626916397498700004, guid: 745fffc2dfe933b468b2fa823c85d93e, type: 3}
-      propertyPath: m_Color.r
-      value: 0.8867924
       objectReference: {fileID: 0}
     - target: {fileID: 7878350319992209165, guid: 745fffc2dfe933b468b2fa823c85d93e, type: 3}
       propertyPath: m_LocalScale.x
@@ -62305,18 +62294,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: flatten_character
       objectReference: {fileID: 0}
-    - target: {fileID: 3626916397498700004, guid: d856bb2adf7ac23488586aad6a746407, type: 3}
-      propertyPath: m_Color.b
-      value: 0.41190812
-      objectReference: {fileID: 0}
-    - target: {fileID: 3626916397498700004, guid: d856bb2adf7ac23488586aad6a746407, type: 3}
-      propertyPath: m_Color.g
-      value: 0.41190812
-      objectReference: {fileID: 0}
-    - target: {fileID: 3626916397498700004, guid: d856bb2adf7ac23488586aad6a746407, type: 3}
-      propertyPath: m_Color.r
-      value: 0.6886792
-      objectReference: {fileID: 0}
     - target: {fileID: 7878350319992209165, guid: d856bb2adf7ac23488586aad6a746407, type: 3}
       propertyPath: m_LocalScale.x
       value: 8
@@ -62639,7 +62616,6 @@ MonoBehaviour:
   fireRate: 1.5
   fireTimer: 1.5
   swordSlash: {fileID: 356116084920340005, guid: 7e2a5077c297cd94e99dea2744b95979, type: 3}
-  slashSpeed: 30
   anim: {fileID: 0}
 --- !u!1 &1469547946
 GameObject:
