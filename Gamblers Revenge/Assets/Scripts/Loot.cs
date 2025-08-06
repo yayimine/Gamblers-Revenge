@@ -16,12 +16,18 @@ public class Loot : MonoBehaviour
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
-        player = GameObject.FindGameObjectWithTag("Player").transform;
+        var playerObj = GameObject.FindGameObjectWithTag("Player");
+        player = playerObj != null ? playerObj.transform : null;
     }
 
     void FixedUpdate()
     {
-        if (player == null) return; // If the player doesn't exist, do nothing
+        if (player == null)
+        {
+            var playerObj = GameObject.FindGameObjectWithTag("Player");
+            player = playerObj != null ? playerObj.transform : null;
+            if (player == null) return; // If the player doesn't exist, do nothing
+        }
         Vector2 orbPos = transform.position;
         Vector2 playerPos = player.position;
         playerPos += Vector2.down; // Offset player position slightly to avoid z-fighting
