@@ -92,7 +92,8 @@ public class UpgradeManager : MonoBehaviour
     public void ApplyUpgrades(
         List<UpgradeType> upgrades,
         Weapon weapon         = null,
-        PlayerController player    = null,
+        PlayerController playerSpeed    = null,
+        Health playerHp = null,
         Projectile projectile = null)
     {
         foreach (var u in upgrades)
@@ -106,13 +107,13 @@ public class UpgradeManager : MonoBehaviour
                     if (weapon != null) upgradeEffects.IncreaseDamage(weapon);
                     break;
                 case UpgradeType.Speed:
-                    if (player != null) upgradeEffects.IncreaseSpeed(player);
+                    if (playerSpeed != null) upgradeEffects.IncreaseSpeed(playerSpeed);
                     break;
                 case UpgradeType.Pierce:
                     if (projectile != null) upgradeEffects.IncreasePierce(projectile);
                     break;
                 case UpgradeType.MaxHealth:
-                    if (player != null) upgradeEffects.IncreaseMaxHealth(player);
+                    if (playerHp != null) upgradeEffects.IncreaseMaxHealth(playerHp);
                     break;
                 /*case UpgradeType.ProjectileSize:
                     if (projectile != null) upgradeEffects.IncreaseProjectileSize(projectile);

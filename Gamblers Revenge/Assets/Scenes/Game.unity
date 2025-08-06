@@ -61779,7 +61779,6 @@ MonoBehaviour:
   fireRate: 1.5
   fireTimer: 1.5
   swordSlash: {fileID: 356116084920340005, guid: 7e2a5077c297cd94e99dea2744b95979, type: 3}
-<<<<<<< HEAD
   slashSpeed: 30
 --- !u!1 &1469547946
 GameObject:
@@ -69091,10 +69090,8 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
-=======
   slashSpeed: 40
   anim: {fileID: 72662590}
->>>>>>> 303ea120b399565f47436e0d3d7e5a3b0310e7b8
 --- !u!1 &1525981550
 GameObject:
   m_ObjectHideFlags: 0
@@ -71773,8 +71770,5 @@ SceneRoots:
   - {fileID: 997977948}
   - {fileID: 1290321421}
   - {fileID: 713356248}
-<<<<<<< HEAD
   - {fileID: 166465871}
-=======
   - {fileID: 1352046116}
->>>>>>> 303ea120b399565f47436e0d3d7e5a3b0310e7b8
