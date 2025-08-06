@@ -3,9 +3,9 @@ using UnityEngine.UI;
 using TMPro;
 using UnityEngine.Events;
 
-public class UpgradeManager : MonoBehaviour
+public class LoseManager : MonoBehaviour
 {
-    public static UpgradeManager instance;
+    public static LoseManager instance;
 
     [Header("Upgrade Screen")]
     public GameObject upgradeScreen;
