@@ -24,13 +24,19 @@ public class UpgradeEffects : MonoBehaviour
         FireRate,
         Damage,
         Speed,
+        ProjectileSpeed,
         Pierce,
         MaxHealth
     }
 
     public void IncreaseFireRate()
     {
-        PlayerController.instance.shotSpeed /= 1.2f;
+        PlayerController.instance.curWeapon.fireRate /= 1.2f;
+    }
+
+    public void IncreaseProjectileSpeed()
+    {
+        PlayerController.instance.shotSpeed *= 1.2f;
     }
 
     public void IncreaseDamage()
@@ -68,6 +74,9 @@ public class UpgradeEffects : MonoBehaviour
             case UpgradeType.Speed:
                 IncreaseSpeed();
                 break;
+            case UpgradeType.ProjectileSpeed:
+                IncreaseProjectileSpeed();
+                break;
             case UpgradeType.Pierce:
                 IncreasePierce();
                 break;
@@ -89,6 +98,7 @@ public class UpgradeEffects : MonoBehaviour
             UpgradeType.Damage,   UpgradeType.Damage,   UpgradeType.Damage,
             UpgradeType.Damage,   UpgradeType.Damage,   UpgradeType.Damage,
             UpgradeType.Speed,    UpgradeType.Speed,    UpgradeType.Speed,
+            UpgradeType.ProjectileSpeed, UpgradeType.ProjectileSpeed, UpgradeType.ProjectileSpeed,
             UpgradeType.MaxHealth, UpgradeType.MaxHealth, UpgradeType.MaxHealth,
             UpgradeType.Pierce
         };
