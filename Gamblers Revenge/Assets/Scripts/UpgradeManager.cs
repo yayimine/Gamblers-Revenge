@@ -16,6 +16,8 @@ public class UpgradeManager : MonoBehaviour
     [Tooltip("The Text component on each of those buttons")]
     public TMP_Text[] upgradeButtonTexts;     // size = 3
 
+    private Action<int> onUpgradeChosen;
+
     void Awake()
     {
         // singleton
@@ -62,6 +64,7 @@ public class UpgradeManager : MonoBehaviour
     {
         // hide UI
         upgradeScreen.SetActive(false);
+        Time.timeScale = 1f; // Resume the game
 
         // invoke the callback
         onUpgradeChosen?.Invoke(idx);
