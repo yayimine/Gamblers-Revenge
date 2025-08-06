@@ -365,7 +365,7 @@ MonoBehaviour:
   level: 1
   speed: 5
   curWeapon: {fileID: 1916245789}
-  projectilePrefab: {fileID: 0}
+  projectilePrefab: {fileID: 356116084920340005, guid: 03919c5228cfc5a40ac21a5570160555, type: 3}
   damage: 1
   shotSpeed: 20
   maxPierces: 1

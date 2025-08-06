@@ -21,6 +21,7 @@ public class Loot : MonoBehaviour
 
     void FixedUpdate()
     {
+        if (player == null) return; // If the player doesn't exist, do nothing
         Vector2 orbPos = transform.position;
         Vector2 playerPos = player.position;
         playerPos += Vector2.down; // Offset player position slightly to avoid z-fighting
