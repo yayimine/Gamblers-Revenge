@@ -25,10 +25,10 @@ public class UpgradeEffects : MonoBehaviour
         projectile.maxPierces += 1;
     }
 
-    public void IncreaseMaxHealth(PlayerController player)
+    public void IncreaseMaxHealth(Health playerHp)
     {
-        player.maxHealth += 1;
-        player.health = player.maxHealth;
+        playerHp.maxHp += 1;
+        playerHp.curHp = playerHp.maxHp;
     }
 
     public void IncreaseProjectileSize(Projectile projectile)
@@ -62,9 +62,9 @@ public class UpgradeEffects : MonoBehaviour
             case UpgradeType.Pierce:
                 if (projectile != null) IncreasePierce(projectile);
                 break;
-            case UpgradeType.MaxHealth:
-                if (player != null) IncreaseMaxHealth(player);
-                break;
+            /*case UpgradeType.MaxHealth:
+                if (playerHp != null) IncreaseMaxHealth(playerHp);
+                break;*/
             case UpgradeType.ProjectileSize:
                 if (projectile != null) IncreaseProjectileSize(projectile);
                 break;

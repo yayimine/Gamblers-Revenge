@@ -63,7 +63,7 @@ public class PlayerController : MonoBehaviour
             upgradeManager.ApplyUpgrades(
                 new List<UpgradeType> { chosenType },
                 weapon: curWeapon,
-                player: this,
+                playerSpeed: this,
                 projectile: projectilePrefab.GetComponent<Projectile>()
             );
 
