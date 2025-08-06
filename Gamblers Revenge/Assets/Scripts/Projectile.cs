@@ -52,9 +52,7 @@ public class Projectile : MonoBehaviour
         // apply `damage` to the enemy here, e.g.:
         // other.GetComponent<Enemy>()?.TakeDamage(damage);
 
-        if (_piercesLeft <= 0)
+        if (--_piercesLeft <= 0)
             Destroy(gameObject);
-        else
-            _piercesLeft--;
     }
 }
