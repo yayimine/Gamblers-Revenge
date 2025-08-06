@@ -114,9 +114,9 @@ public class UpgradeManager : MonoBehaviour
                 case UpgradeType.MaxHealth:
                     if (player != null) upgradeEffects.IncreaseMaxHealth(player);
                     break;
-                case UpgradeType.ProjectileSize:
+                /*case UpgradeType.ProjectileSize:
                     if (projectile != null) upgradeEffects.IncreaseProjectileSize(projectile);
-                    break;
+                    break;*/
                 case UpgradeType.ProjectileSpeed:
                     if (projectile != null) upgradeEffects.IncreaseProjectileSpeed(projectile);
                     break;

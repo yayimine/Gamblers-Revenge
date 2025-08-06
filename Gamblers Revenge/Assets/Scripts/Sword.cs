@@ -24,7 +24,7 @@ public class Sword : Weapon
         {
             return;
         }
-        anim.SetTrigger("SwordSlash");
+        //anim.SetTrigger("SwordSlash");
         Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         Vector2 shootDir = mousePos - (Vector2)transform.position;
 

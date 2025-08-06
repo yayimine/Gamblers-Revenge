@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Werewolf : MonoBehaviour
 {
+    
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
@@ -43,6 +44,7 @@ public class Werewolf : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        
     }
 
     // Update is called once per frame

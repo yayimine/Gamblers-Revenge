@@ -10,6 +10,8 @@ public class PlayerController : MonoBehaviour
     public int level = 1;
     public Weapon curWeapon;
     public GameObject projectilePrefab;
+    public float speed = 7f;
+    public static PlayerController instance;
 
     public UpgradeManager upgradeManager; // assign in Inspector
 
@@ -22,6 +24,7 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         GameManager.instance.InitializeScore();
+        instance = this;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

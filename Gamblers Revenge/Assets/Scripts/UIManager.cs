@@ -47,9 +47,9 @@ public class UIManager : MonoBehaviour
         restartButton.onClick.AddListener(Restart);
 
         // Upgrade screen setup
-        upgradeScreen.SetActive(false);
+        /*upgradeScreen.SetActive(false);
         foreach (var btn in upgradeButtons)
-            btn.onClick.AddListener(() => OnUpgradeButtonClicked(btn));
+            btn.onClick.AddListener(() => OnUpgradeButtonClicked(btn)); */
     }
 
     void Update()
