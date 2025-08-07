@@ -10119,7 +10119,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91a2649d22c3191428593d35255d9f08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 5
+  damage: 50
   fireRate: 1.5
   fireTimer: 1.5
   swordSlash: {fileID: 356116084920340005, guid: 7e2a5077c297cd94e99dea2744b95979, type: 3}
@@ -19380,7 +19380,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4eb57614882f443e8575a4135cc234d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 1
+  damage: 10
   fireRate: 0.5
   fireTimer: 1.5
   projectilePrefab: {fileID: 356116084920340005, guid: 03919c5228cfc5a40ac21a5570160555, type: 3}
