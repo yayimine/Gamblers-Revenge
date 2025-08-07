@@ -90,7 +90,7 @@ public class UIManager : MonoBehaviour
         if (levelText != null)
             levelText.text = "Level: " + player.level;
         if (pointsText != null)
-            pointsText.text = "Points: " + player.points + "/" + player.maxPoints;
+            pointsText.text = player.points + "/" + player.maxPoints;
         if (healthText != null)
             healthText.text = $"{playerHealth.curHp}/{playerHealth.maxHp}";
     }

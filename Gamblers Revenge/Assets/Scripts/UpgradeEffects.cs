@@ -45,17 +45,17 @@ public class UpgradeEffects : MonoBehaviour
 
     public void IncreaseFireRate()
     {
-        PlayerController.instance.shotSpeed /= 1.2f;
+        PlayerController.instance.shotSpeed /= 1.3f;
     }
 
     public void IncreaseDamage()
     {
-        PlayerController.instance.damage *= 1.2f;
+        PlayerController.instance.damage += 1f;
     }
 
     public void IncreaseSpeed()
     {
-        PlayerController.instance.speed *= 1.2f;
+        PlayerController.instance.speed += 1f;
     }
 
     public void IncreasePierce()
@@ -66,8 +66,8 @@ public class UpgradeEffects : MonoBehaviour
 
     public void IncreaseMaxHealth()
     {
-        Health.instance.maxHp += 1;
-        Health.instance.curHp += 1;
+        Health.instance.maxHp += 2;
+        Health.instance.curHp += 2;
     }
 
     public void ApplyUpgrade(UpgradeType upgradeType)
