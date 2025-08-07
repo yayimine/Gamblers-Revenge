@@ -60,10 +60,11 @@ public class Werewolf : MonoBehaviour
 
         Vector2 dir = PlayerController.instance.transform.position - transform.position;
         rb.velocity = dir.normalized * speed;
+
+
     }
 
 }
-
 
 
 
