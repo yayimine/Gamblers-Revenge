@@ -45,17 +45,21 @@ public class UpgradeEffects : MonoBehaviour
 
     public void IncreaseFireRate()
     {
-        PlayerController.instance.shotSpeed /= 1.3f;
+        
+        PlayerController.instance.curWeapon.fireRate /= 1.2f;
+        
     }
 
     public void IncreaseDamage()
     {
-        PlayerController.instance.damage += 1f;
+        if (PlayerController.instance.damage <= 20f) PlayerController.instance.damage += 5f;
+        else PlayerController.instance.damage *= 1.2f;
+
     }
 
     public void IncreaseSpeed()
     {
-        PlayerController.instance.speed += 1f;
+        PlayerController.instance.speed += 1.5f;
     }
 
     public void IncreasePierce()
