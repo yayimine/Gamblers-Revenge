@@ -23,7 +23,7 @@ public class UIManager : MonoBehaviour
     [Header("Lose Screen")]
     public GameObject loseScreen;
 
-    public gameObject mainMenuButton, restartButton; // Buttons for the lose screen
+    public Button mainMenuButton, restartButton; // Buttons for the lose screen
 
     [Header("Upgrade Screen")]
     public GameObject upgradeScreen;

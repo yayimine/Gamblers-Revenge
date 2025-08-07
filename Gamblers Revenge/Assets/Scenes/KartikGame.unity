@@ -2402,7 +2402,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &936329113
 RectTransform:
   m_ObjectHideFlags: 0
@@ -19205,6 +19205,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6a035ebf551294a02bbc1b96d83eb4ec, type: 3}
   - {fileID: 21300000, guid: 7fd7620cc569f4a78ad1c1cccd149db2, type: 3}
   loseScreen: {fileID: 936329112}
+  mainMenuButton: {fileID: 1556948319}
+  restartButton: {fileID: 366250888}
   upgradeScreen: {fileID: 1808585491}
   upgradeButtons:
   - {fileID: 688163455}
