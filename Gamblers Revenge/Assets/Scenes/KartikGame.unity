@@ -2027,6 +2027,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: laser (1)
       objectReference: {fileID: 0}
+    - target: {fileID: -2253911629886400664, guid: 745fffc2dfe933b468b2fa823c85d93e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3626916397498700004, guid: 745fffc2dfe933b468b2fa823c85d93e, type: 3}
       propertyPath: m_Color.b
       value: 0.07775002
@@ -2223,6 +2227,10 @@ PrefabInstance:
     - target: {fileID: 971739766683967817, guid: d7181173528fed74ca94e13c8423876f, type: 3}
       propertyPath: m_Name
       value: Golemite
+      objectReference: {fileID: 0}
+    - target: {fileID: 971739766683967817, guid: d7181173528fed74ca94e13c8423876f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -10075,6 +10083,10 @@ PrefabInstance:
     - target: {fileID: -2253911629886400664, guid: d856bb2adf7ac23488586aad6a746407, type: 3}
       propertyPath: m_Name
       value: flatten_character
+      objectReference: {fileID: 0}
+    - target: {fileID: -2253911629886400664, guid: d856bb2adf7ac23488586aad6a746407, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3626916397498700004, guid: d856bb2adf7ac23488586aad6a746407, type: 3}
       propertyPath: m_Color.b
@@ -19071,7 +19083,12 @@ MonoBehaviour:
   healthText: {fileID: 1830561572}
   scoreText: {fileID: 356556265}
   highScoreText: {fileID: 538096501}
-  upgradeButtonSprites: []
+  upgradeButtonSprites:
+  - {fileID: 21300000, guid: a97136478105f4439b18237f5eaf2ec7, type: 3}
+  - {fileID: 21300000, guid: e84388bde659c410b85248fc00a37c6d, type: 3}
+  - {fileID: 21300000, guid: 74e7a44abaa1c4a85b222ec7a428d537, type: 3}
+  - {fileID: 21300000, guid: 6a035ebf551294a02bbc1b96d83eb4ec, type: 3}
+  - {fileID: 21300000, guid: 7fd7620cc569f4a78ad1c1cccd149db2, type: 3}
   loseScreen: {fileID: 936329112}
   upgradeScreen: {fileID: 1808585491}
   upgradeButtons:

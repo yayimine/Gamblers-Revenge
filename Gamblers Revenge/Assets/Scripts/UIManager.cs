@@ -18,7 +18,7 @@ public class UIManager : MonoBehaviour
     public TMP_Text scoreText, highScoreText;
     Health playerHealth;
 
-    public List<Sprite> upgradeButtonSprites; // size = 3
+    public List<Sprite> upgradeButtonSprites; // size = 5
 
     [Header("Lose Screen")]
     public GameObject loseScreen;
