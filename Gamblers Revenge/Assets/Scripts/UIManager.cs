@@ -23,6 +23,8 @@ public class UIManager : MonoBehaviour
     [Header("Lose Screen")]
     public GameObject loseScreen;
 
+    public gameObject mainMenuButton, restartButton; // Buttons for the lose screen
+
     [Header("Upgrade Screen")]
     public GameObject upgradeScreen;
     [Tooltip("Assign exactly 3 buttons here")]
@@ -58,6 +60,12 @@ public class UIManager : MonoBehaviour
                 upgradeButtons[i].onClick.AddListener(() => OnUpgradeButton(idx));
             }
         }
+
+        //lose screen setup
+        if (mainMenuButton != null)
+            mainMenuButton.GetComponent<Button>().onClick.AddListener(MainMenu);
+        if (restartButton != null)
+            restartButton.GetComponent<Button>().onClick.AddListener(Restart);
     }
 
     void Update()
