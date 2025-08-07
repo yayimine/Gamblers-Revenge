@@ -174,4 +174,4 @@ MonoBehaviour:
   damage: 1
   maxPierces: -1
   initialSpeed: 20
-  lifetime: 0.1
+  lifetime: 1
