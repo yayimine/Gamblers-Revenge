@@ -74,14 +74,14 @@ public class PlayerController : MonoBehaviour
         // 2) pick 3 random upgrades
         List<UpgradeEffects.UpgradeType> picks = UpgradeEffects.Instance.ChooseUpgrades();
         string[] optionNames = picks.Select(u => u.ToString()).ToArray();
+        int[] optionIndex = picks.Select(u => (int)u).ToArray();
 
         // 3) show UI
-        UIManager.instance.ShowUpgradeScreen(optionNames, choice =>
+        UIManager.instance.ShowUpgradeScreen(optionNames, optionIndex, choice =>
         {
             // 4) apply the picked upgrade
             UpgradeEffects.UpgradeType chosen = picks[choice];
             UpgradeEffects.Instance.ApplyUpgrade(chosen);
-
             _awaitingUpgrade = false;
         });
     }

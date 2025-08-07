@@ -66,8 +66,8 @@ public class UpgradeEffects : MonoBehaviour
 
     public void IncreaseMaxHealth()
     {
-        Health.instance.maxHp += 2;
-        Health.instance.curHp += 2;
+        //agent edit here
+        
     }
 
     public void ApplyUpgrade(UpgradeType upgradeType)

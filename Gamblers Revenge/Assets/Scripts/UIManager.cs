@@ -16,6 +16,8 @@ public class UIManager : MonoBehaviour
     public TMP_Text scoreText, highScoreText;
     Health playerHealth;
 
+    public List<Sprite> upgradeButtonSprites; // size = 3
+
     [Header("Lose Screen")]
     public GameObject loseScreen;
 
@@ -115,7 +117,7 @@ public class UIManager : MonoBehaviour
         Time.timeScale = 0f;
     }
 
-    public void ShowUpgradeScreen(string[] options, Action<int> onChosen)
+    public void ShowUpgradeScreen(string[] options, int[] optionIndexes,  Action<int> onChosen)
     {
         if (options.Length != upgradeButtons.Length)
         {
@@ -128,6 +130,7 @@ public class UIManager : MonoBehaviour
         for (int i = 0; i < upgradeButtons.Length; i++)
         {
             upgradeButtons[i].gameObject.SetActive(true);
+            upgradeButtons[i].GetComponent<Image>().sprite = upgradeButtonSprites[optionIndexes[i]];
             upgradeButtonTexts[i].text = options[i];
         }
 

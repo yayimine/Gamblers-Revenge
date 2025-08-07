@@ -18797,6 +18797,15 @@ MonoBehaviour:
   healthText: {fileID: 1830561572}
   scoreText: {fileID: 356556265}
   highScoreText: {fileID: 538096501}
+  UpgradeButton1: {fileID: 1011585085}
+  UpgradeButton2: {fileID: 877640146}
+  UpgradeButton3: {fileID: 1351127455}
+  upgradeButtonSprites:
+  - {fileID: 21300000, guid: a97136478105f4439b18237f5eaf2ec7, type: 3}
+  - {fileID: 21300000, guid: e84388bde659c410b85248fc00a37c6d, type: 3}
+  - {fileID: 21300000, guid: 74e7a44abaa1c4a85b222ec7a428d537, type: 3}
+  - {fileID: 21300000, guid: 6a035ebf551294a02bbc1b96d83eb4ec, type: 3}
+  - {fileID: 21300000, guid: 7fd7620cc569f4a78ad1c1cccd149db2, type: 3}
   loseScreen: {fileID: 936329112}
   upgradeScreen: {fileID: 1461009349}
   upgradeButtons:
