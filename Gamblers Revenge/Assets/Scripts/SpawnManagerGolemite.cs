@@ -2,21 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
 using UnityEngine.UI; // Import the UI namespace to work with UI elements
 using UnityEngine.SceneManagement; // Import the SceneManagement namespace to load scenes
 
+/// <summary>
+/// Spawns golemite enemies periodically. The spawn rate decreases as the game
+/// stage increases to increase difficulty.
+/// </summary>
 public class SpawnManagerGolemite : MonoBehaviour
 {
     public GameObject enemyPrefab; // Reference to the enemy prefab
     public float spawnRate = 30f;
     public float spawnTimer = 30f;
-    // Start is called before the first frame update
 
-    
     void Start()
     {
-
     }
 
     // Update is called once per frame
@@ -24,7 +24,6 @@ public class SpawnManagerGolemite : MonoBehaviour
     {
         if (GameManager.instance == null) return;
         spawnRate = 30f / GameManager.instance.gameStage;
-
 
         if (spawnTimer > 0f)
         {
@@ -37,6 +36,7 @@ public class SpawnManagerGolemite : MonoBehaviour
         }
     }
 
+    /// <summary>Spawn a golemite far enough away from the player.</summary>
     void SpawnEnemy()
     {
         if (PlayerController.instance == null) return;
@@ -48,6 +48,5 @@ public class SpawnManagerGolemite : MonoBehaviour
         {
             Instantiate(enemyPrefab, randomPos, enemyPrefab.transform.rotation);
         }
-
     }
 }

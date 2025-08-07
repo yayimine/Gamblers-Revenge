@@ -3,6 +3,11 @@ using UnityEngine.UI;
 using TMPro;
 using UnityEngine.Events;
 
+/// <summary>
+/// Handles displaying the upgrade selection screen when the player has lost
+/// and needs to choose from a set of upgrades. It configures the UI elements
+/// and invokes a callback when an option is selected.
+/// </summary>
 public class LoseManager : MonoBehaviour
 {
     public static LoseManager instance;

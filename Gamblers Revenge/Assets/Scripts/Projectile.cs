@@ -1,6 +1,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Generic projectile behaviour that travels forward and optionally pierces
+/// multiple enemies before being destroyed.
+/// </summary>
 public class Projectile : MonoBehaviour
 {
     // make these public so other scripts (like Sword) can assign to them

@@ -1,6 +1,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Provides concrete upgrade effects and utility methods for selecting and
+/// applying upgrades to the player.
+/// </summary>
 public class UpgradeEffects : MonoBehaviour
 {
 
@@ -19,6 +23,7 @@ public class UpgradeEffects : MonoBehaviour
             Destroy(gameObject);
         }
     }
+    /// <summary>All possible upgrade types.</summary>
     public enum UpgradeType
     {
         FireRate,
@@ -62,6 +67,7 @@ public class UpgradeEffects : MonoBehaviour
         playerHealth.curHp += 1;
     }
 
+    /// <summary>Apply the effect corresponding to the chosen upgrade.</summary>
     public void ApplyUpgrade(UpgradeType upgradeType)
     {
         switch (upgradeType)
@@ -90,6 +96,10 @@ public class UpgradeEffects : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Randomly choose three unique upgrades from a weighted list to present to
+    /// the player.
+    /// </summary>
     public List<UpgradeType> ChooseUpgrades()
     {
         var availableUpgrades = new List<UpgradeType>

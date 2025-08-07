@@ -6,6 +6,10 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using TMPro;
 
+/// <summary>
+/// Handles the upgrade selection UI, presenting upgrade options and relaying
+/// the player's choice back to the caller.
+/// </summary>
 public class UpgradeManager : MonoBehaviour
 {
      public static UpgradeManager instance;

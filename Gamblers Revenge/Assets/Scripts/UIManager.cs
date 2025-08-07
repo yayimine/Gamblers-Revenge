@@ -5,8 +5,12 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using TMPro;
 
+/// <summary>
+/// Manages all on-screen UI elements such as HUD stats and menu navigation.
+/// </summary>
 public class UIManager : MonoBehaviour
 {
+    /// <summary>Singleton instance for global access.</summary>
     public static UIManager instance;
 
     [Header("In-Game HUD")]
@@ -29,6 +33,10 @@ public class UIManager : MonoBehaviour
 
     }
 
+    /// <summary>
+    /// Refreshes HUD values each frame to reflect the player's current stats and
+    /// overall score.
+    /// </summary>
     void Update()
     {
         // Update score & high score
@@ -60,13 +68,15 @@ public class UIManager : MonoBehaviour
                             + "/" + PlayerController.instance.maxPoints;
         healthText.text = $"{playerHealth.curHp}/{playerHealth.maxHp}";
     }
-    
 
+
+    /// <summary>Reloads the current scene to restart the game.</summary>
     public void Restart()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
+    /// <summary>Loads the main menu scene.</summary>
     public void MainMenu()
     {
         SceneManager.LoadScene("MainMenu");

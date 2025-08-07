@@ -2,14 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Ranged weapon that fires small sword slice projectiles toward the mouse
+/// position when the left mouse button is clicked.
+/// </summary>
 public class SwordSlices : Weapon
 {
-    public GameObject projectilePrefab; //assign this in the inspector
+    public GameObject projectilePrefab; // assign this in the inspector
     float shotSpeed = 0f;
+
     void Start()
     {
         shotSpeed = PlayerController.instance.shotSpeed;
     }
+
     public override bool Attack()
     {
         if (Input.GetMouseButton(0) == false)

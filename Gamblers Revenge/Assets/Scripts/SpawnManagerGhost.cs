@@ -2,21 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
 using UnityEngine.UI; // Import the UI namespace to work with UI elements
 using UnityEngine.SceneManagement; // Import the SceneManagement namespace to load scenes
 
+/// <summary>
+/// Spawns ghost enemies at a rate that scales with the current game stage.
+/// </summary>
 public class SpawnManagerGhost : MonoBehaviour
 {
     public GameObject enemyPrefab; // Reference to the enemy prefab
     public float spawnRate = 1.5f;
     public float spawnTimer = 1.5f;
-    // Start is called before the first frame update
 
-    
     void Start()
     {
-
     }
 
     // Update is called once per frame
@@ -24,7 +23,6 @@ public class SpawnManagerGhost : MonoBehaviour
     {
         if (GameManager.instance == null) return;
         spawnRate = 2f / GameManager.instance.gameStage;
-
 
         if (spawnTimer > 0f)
         {
@@ -37,6 +35,7 @@ public class SpawnManagerGhost : MonoBehaviour
         }
     }
 
+    /// <summary>Spawn a ghost at a random location away from the player.</summary>
     void SpawnEnemy()
     {
         if (PlayerController.instance == null) return;
@@ -48,6 +47,5 @@ public class SpawnManagerGhost : MonoBehaviour
         {
             Instantiate(enemyPrefab, randomPos, enemyPrefab.transform.rotation);
         }
-
     }
 }

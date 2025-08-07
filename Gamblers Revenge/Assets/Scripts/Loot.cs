@@ -3,12 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 
+/// <summary>
+/// Collectable loot orb that homes toward the player when they are within a
+/// specified range.  Once collected it is destroyed by the player script.
+/// </summary>
 public class Loot : MonoBehaviour
 {
-    // Update is called once per frame
-
     [Header("Homing Settings")]
-    public float homingRange = 5f;           // range within which the orb will start homing towards the player
+    /// <summary>Range within which the orb will start homing towards the player.</summary>
+    public float homingRange = 5f;
 
     private Transform player;
     private Rigidbody2D rb;
@@ -22,6 +25,7 @@ public class Loot : MonoBehaviour
 
     void FixedUpdate()
     {
+        // Acquire player reference if we somehow lost it.
         if (player == null)
         {
             var playerObj = GameObject.FindGameObjectWithTag("Player");
@@ -35,10 +39,9 @@ public class Loot : MonoBehaviour
 
         if (dist <= homingRange)
         {
+            // Move toward the player. Speed increases as distance decreases.
             Vector2 dir = (playerPos - orbPos).normalized;
-            
-            float speed = (homingRange) / dist; // Interpolate speed based on distance            
-
+            float speed = (homingRange) / dist; // Interpolate speed based on distance
             rb.velocity = dir * speed;
         }
         else

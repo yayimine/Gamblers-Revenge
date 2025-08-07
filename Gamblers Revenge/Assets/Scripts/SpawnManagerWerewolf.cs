@@ -2,21 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
 using UnityEngine.UI; // Import the UI namespace to work with UI elements
 using UnityEngine.SceneManagement; // Import the SceneManagement namespace to load scenes
 
+/// <summary>
+/// Controls spawning of werewolf enemies. Spawn rate scales with the game's
+/// current stage to ramp difficulty over time.
+/// </summary>
 public class SpawnManagerWerewolf : MonoBehaviour
 {
     public GameObject enemyPrefab; // Reference to the enemy prefab
     public float spawnRate = 10f;
     public float spawnTimer = 10f;
-    // Start is called before the first frame update
 
-    
     void Start()
     {
-
     }
 
     // Update is called once per frame
@@ -24,7 +24,6 @@ public class SpawnManagerWerewolf : MonoBehaviour
     {
         if (GameManager.instance == null) return;
         spawnRate = 10f / GameManager.instance.gameStage;
-
 
         if (spawnTimer > 0f)
         {
@@ -37,6 +36,7 @@ public class SpawnManagerWerewolf : MonoBehaviour
         }
     }
 
+    /// <summary>Spawn a werewolf in a random spot away from the player.</summary>
     void SpawnEnemy()
     {
         if (PlayerController.instance == null) return;
@@ -48,6 +48,5 @@ public class SpawnManagerWerewolf : MonoBehaviour
         {
             Instantiate(enemyPrefab, randomPos, enemyPrefab.transform.rotation);
         }
-
     }
 }

@@ -2,11 +2,18 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
+/// <summary>
+/// Handles player input, movement, leveling and upgrade selection. This is the
+/// core gameplay controller for the player character.
+/// </summary>
 public class PlayerController : MonoBehaviour
 {
     [Header("Leveling & Upgrades")]
+    /// <summary>Current points toward next level.</summary>
     public int points = 0;
+    /// <summary>Points required to level up.</summary>
     public int maxPoints = 5;
+    /// <summary>Current player level.</summary>
     public int level = 1;
 
     [Header("Movement & Combat")]
@@ -38,6 +45,7 @@ public class PlayerController : MonoBehaviour
         GameManager.instance.InitializeScore();
     }
 
+    /// <summary>Collect loot orbs and handle leveling when enough are gathered.</summary>
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Loot"))
@@ -52,6 +60,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    /// <summary>Handle leveling up and presenting upgrade choices to the player.</summary>
     private void LevelUp()
     {
         _awaitingUpgrade = true;
