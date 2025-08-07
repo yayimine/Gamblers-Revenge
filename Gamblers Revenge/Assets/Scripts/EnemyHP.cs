@@ -28,6 +28,7 @@ public class EnemyHP : MonoBehaviour
         {
             hpSlider.maxValue = health.maxHp;
             hpSlider.value = health.curHp;
+
             hpSlider.gameObject.SetActive(true);
         }
     }
