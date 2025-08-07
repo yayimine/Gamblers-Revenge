@@ -60,9 +60,16 @@ public class PlayerController : MonoBehaviour
         level++;
         points = 0;
         maxPoints = Mathf.RoundToInt(maxPoints * 1.5f);
-        FindObjectOfType<SpawnManagerWerewolf>().spawnRate *= 0.8f;
-        FindObjectOfType<SpawnManagerGolemite>().spawnRate *= 0.8f;
-        FindObjectOfType<SpawnManagerGhost>().spawnRate *= 0.8f;
+
+        // Lower enemy spawn rates for all active spawn managers if they exist
+        foreach (var spawner in FindObjectsOfType<SpawnManagerWerewolf>())
+            spawner.spawnRate *= 0.8f;
+
+        foreach (var spawner in FindObjectsOfType<SpawnManagerGolemite>())
+            spawner.spawnRate *= 0.8f;
+
+        foreach (var spawner in FindObjectsOfType<SpawnManagerGhost>())
+            spawner.spawnRate *= 0.8f;
 
         // 2) pick 3 random upgrades
         List<UpgradeEffects.UpgradeType> picks = UpgradeEffects.instance.ChooseUpgrades();
