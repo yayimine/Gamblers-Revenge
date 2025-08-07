@@ -26,8 +26,8 @@ public class UIManager : MonoBehaviour
 
     void Start()
     {
-        if (PlayerController.instance != null)
-            playerHealth = PlayerController.instance.GetComponent<Health>();
+        playerHealth = PlayerController.instance.GetComponent<Health>();
+        
     }
 
     void Update()
@@ -39,32 +39,18 @@ public class UIManager : MonoBehaviour
             highScoreText.text = "High Score: " + GameManager.instance.highScore;*/
 
         // Update HUD
-        var player = PlayerController.instance;
-        if (player == null)
+        if (PlayerController.instance == null)
         {
-            if (hpBar != null)
-                hpBar.fillAmount = 0f;
+            hpBar.fillAmount = 0f;
             return;
         }
 
-        if (playerHealth == null)
-            playerHealth = player.GetComponent<Health>();
-
-        if (playerHealth == null)
-        {
-            if (hpBar != null)
-                hpBar.fillAmount = 0f;
-            return;
-        }
-
-        if (hpBar != null)
-            hpBar.fillAmount = playerHealth.curHp / playerHealth.maxHp;
-        if (levelText != null)
-            levelText.text = "Level: " + player.level;
-        if (pointsText != null)
-            pointsText.text = "Points: " + player.points + "/" + player.maxPoints;
-        if (healthText != null)
-            healthText.text = $"{playerHealth.curHp}/{playerHealth.maxHp}";
+        hpBar.fillAmount = playerHealth.curHp / playerHealth.maxHp;
+        levelText.text = "Level: " + PlayerController.instance.level;
+        pointsText.text = "Points: " 
+                            + PlayerController.instance.points 
+                            + "/" + PlayerController.instance.maxPoints;
+        healthText.text = $"{playerHealth.curHp}/{playerHealth.maxHp}";
     }
     
 
