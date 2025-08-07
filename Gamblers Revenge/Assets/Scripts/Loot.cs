@@ -6,6 +6,8 @@ using System.Linq;
 public class Loot : MonoBehaviour
 {
     // Update is called once per frame
+    public int value; // Value of the loot orb, used for scoring
+    public float scale; // Scale of the loot orb, used for visual size
 
     [Header("Homing Settings")]
     public float homingRange = 5f;           // range within which the orb will start homing towards the player

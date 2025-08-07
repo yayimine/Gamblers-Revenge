@@ -48,7 +48,7 @@ public class PlayerController : MonoBehaviour
 
             if (_awaitingUpgrade) return;
 
-            points++;
+            points+=collision.GetComponent<Loot>().value;
             if (points >= maxPoints)
                 LevelUp();
         }

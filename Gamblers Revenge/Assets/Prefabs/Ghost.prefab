@@ -174,6 +174,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d615631a8aa540e28cd3530c61cc9e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lootValue: 1
+  lootScale: 2
   loot: {fileID: 7919791859526016229, guid: 1e4d1ca1eb34d45f48a10aab5ad19891, type: 3}
   speed: 3
 --- !u!114 &-8599124715398322879

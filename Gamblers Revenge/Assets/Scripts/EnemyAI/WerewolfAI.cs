@@ -15,6 +15,10 @@ public class Werewolf : MonoBehaviour
         }
     }
 
+    [Header("Loot Settings")]
+    public int lootValue = 1; // Value of the loot dropped by the enemy
+    public float lootScale = 1f; // Scale of the loot when spawned
+
     public GameObject loot;
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -28,6 +32,13 @@ public class Werewolf : MonoBehaviour
                 Destroy(gameObject);
                 if (loot != null)
                 {
+                    //loot scale = 1
+                    loot.transform.localScale = new Vector3(lootScale, lootScale, 1f); // Set the scale of the loot
+                    Loot lootComponent = loot.GetComponent<Loot>();
+                    if (lootComponent != null)
+                    {
+                        lootComponent.value = lootValue; // Set the value of the loot
+                    }
                     Instantiate(loot, transform.position, loot.transform.rotation); // Spawn loot at the enemy's position
                 }
 
