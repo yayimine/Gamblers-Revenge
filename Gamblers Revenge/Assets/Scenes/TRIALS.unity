@@ -2319,7 +2319,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &936329113
 RectTransform:
   m_ObjectHideFlags: 0
@@ -10139,7 +10139,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1461009350
 RectTransform:
   m_ObjectHideFlags: 0
@@ -18791,16 +18791,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hpBar: {fileID: 31143291}
-  xpBar: {fileID: 0}
+  xpBar: {fileID: 1008029117}
   levelText: {fileID: 1226746281}
   pointsText: {fileID: 1478533352}
   healthText: {fileID: 1830561572}
   scoreText: {fileID: 356556265}
   highScoreText: {fileID: 538096501}
   loseScreen: {fileID: 936329112}
-  upgradeScreen: {fileID: 0}
-  upgradeButtons: []
-  upgradeButtonTexts: []
+  upgradeScreen: {fileID: 1461009349}
+  upgradeButtons:
+  - {fileID: 1011585084}
+  - {fileID: 877640145}
+  - {fileID: 1351127454}
+  upgradeButtonTexts:
+  - {fileID: 677109982}
+  - {fileID: 1827086798}
+  - {fileID: 233975647}
 --- !u!114 &1798150595
 MonoBehaviour:
   m_ObjectHideFlags: 0
