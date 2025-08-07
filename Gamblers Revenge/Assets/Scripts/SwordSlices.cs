@@ -12,7 +12,7 @@ public class SwordSlices : Weapon
     }
     public override void Attack()
     {
-        if (Input.GetMouseButton(0) == false)
+        if (!(fireTimer < 0))
         {
             return;
         }
@@ -34,6 +34,16 @@ public class SwordSlices : Weapon
         Rigidbody2D rb = g.GetComponent<Rigidbody2D>();
         rb.velocity = shootDir.normalized * shotSpeed;
         g.GetComponent<Projectile>().damage = damage;
+
+        base.Attack();
     }
 
+    public override void Update()
+    {
+        if (Input.GetMouseButton(0) == true)
+        {
+            Attack(); // Call the attack method
+        }
+        base.Update();
+    }
 }

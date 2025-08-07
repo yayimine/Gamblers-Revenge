@@ -10,12 +10,12 @@ public class Weapon : MonoBehaviour
 
     public virtual void Attack()
     {
-        print("Parent attack!");
+        fireTimer = fireRate; // Reset the timer
     }
 
 
     // Update is called once per frame
-    void Update()
+    public virtual void Update()
     {
         if (fireTimer > 0f)
         {
@@ -24,8 +24,7 @@ public class Weapon : MonoBehaviour
         else
         {
             
-                Attack(); // Call the attack method
-                fireTimer = fireRate; // Reset the timer
+                
             
         }
        

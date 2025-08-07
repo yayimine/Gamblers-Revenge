@@ -12,6 +12,8 @@ public class UIManager : MonoBehaviour
     [Header("In-Game HUD")]
     public Image hpBar;
     public Image xpBar;
+    public Image pierceBar;
+    public Image dashBar;
     public TMP_Text levelText, pointsText, healthText;
     public TMP_Text scoreText, highScoreText;
     Health playerHealth;
@@ -68,6 +70,7 @@ public class UIManager : MonoBehaviour
 
         // Update HUD
         var player = PlayerController.instance;
+        var sword = player.sword;
         if (player == null)
         {
             if (hpBar != null)
@@ -95,6 +98,8 @@ public class UIManager : MonoBehaviour
             pointsText.text = player.points + "/" + player.maxPoints;
         if (healthText != null)
             healthText.text = $"{playerHealth.curHp}/{playerHealth.maxHp}";
+        if (pierceBar != null)
+            pierceBar.fillAmount = sword.fireTimer / sword.fireRate;
     }
 
 

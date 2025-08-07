@@ -10,7 +10,8 @@ public class Werewolf : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         { //if the enemy collides with the player
             Destroy(gameObject);
-            collision.gameObject.GetComponent<Health>().TakeDamage(1);
+            float random = Mathf.Round(Random.Range(2f, 3f));
+            collision.gameObject.GetComponent<Health>().TakeDamage(random);
         }
     }
 

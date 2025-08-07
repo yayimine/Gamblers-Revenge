@@ -25,7 +25,7 @@ public class Health : MonoBehaviour
         return instance;
     }
 
-    public float maxHp = 10f; // Maximum health of the object
+    public float maxHp = 20f; // Maximum health of the object
     public float curHp = 0f;
     // Start is called before the first frame update
     void Start()

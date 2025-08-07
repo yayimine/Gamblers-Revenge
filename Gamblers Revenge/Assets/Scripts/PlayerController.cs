@@ -25,6 +25,7 @@ public class PlayerController : MonoBehaviour
     private bool _awaitingUpgrade = false;
     private Rigidbody2D rb;
     private Animator anim;
+    public Sword sword;
 
     void Awake()
     {

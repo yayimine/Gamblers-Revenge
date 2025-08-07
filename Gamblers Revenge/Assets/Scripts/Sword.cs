@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Sword : Weapon
@@ -10,7 +11,7 @@ public class Sword : Weapon
 
     private void Awake()
     {
-        damage = 5f;
+        damage = 50f;
         fireRate = 3f;
         fireTimer = 3f;
     }
@@ -20,11 +21,22 @@ public class Sword : Weapon
         slashSpeed = PlayerController.instance.shotSpeed*2;
     }
 
+    public override void Update()
+    {
+
+        if (Input.GetMouseButton(1) == true)
+        {
+            Attack(); // Call the attack method
+        }
+        base.Update();
+        
+    }
+
 
     // Start is called before the first frame update
     public override void Attack()
     {
-        if (Input.GetMouseButton(1) == false)
+        if (!(fireTimer < 0))
         {
             return;
         }
@@ -45,7 +57,7 @@ public class Sword : Weapon
         slash.GetComponent<Projectile>().damage = damage;
 
 
-
+        base.Attack();
 
     }
 }
