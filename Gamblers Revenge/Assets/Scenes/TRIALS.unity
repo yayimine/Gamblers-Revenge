@@ -2319,7 +2319,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &936329113
 RectTransform:
   m_ObjectHideFlags: 0
@@ -10139,7 +10139,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1461009350
 RectTransform:
   m_ObjectHideFlags: 0
@@ -18798,6 +18798,9 @@ MonoBehaviour:
   scoreText: {fileID: 356556265}
   highScoreText: {fileID: 538096501}
   loseScreen: {fileID: 936329112}
+  upgradeScreen: {fileID: 0}
+  upgradeButtons: []
+  upgradeButtonTexts: []
 --- !u!114 &1798150595
 MonoBehaviour:
   m_ObjectHideFlags: 0
