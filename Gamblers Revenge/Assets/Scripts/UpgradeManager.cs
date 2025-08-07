@@ -61,7 +61,7 @@ public class UpgradeManager : MonoBehaviour
 
         upgradeScreen.SetActive(true);
     }
-     private void OnUpgradeButton(int idx)
+    private void OnUpgradeButton(int idx)
     {
         // hide UI
         upgradeScreen.SetActive(false);
@@ -73,5 +73,17 @@ public class UpgradeManager : MonoBehaviour
         onUpgradeChosen?.Invoke(idx);
 
         onUpgradeChosen = null;
+    }
+
+    // Ensure the upgrade screen starts hidden in every scene
+    [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
+    static void HideOnSceneLoad()
+    {
+        var screen = GameObject.Find("UpgradeScreen");
+        if (screen != null)
+        {
+            screen.SetActive(false);
+            Time.timeScale = 1f;
+        }
     }
 }
