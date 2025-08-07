@@ -5,13 +5,13 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class MainMenu : MonoBehaviour
+public class StartButton : MonoBehaviour
 {
     public Button startButton; // Reference to the Start button
-
+    //
     public void StartButtonPressed()
     {
-        SceneManager.LoadScene("Control guidience"); // Load the game scene when the button is pressed
+        SceneManager.LoadScene("KartikGame"); // Load the game scene when the button is pressed
     }
     // Start is called before the first frame update
     void Start()
