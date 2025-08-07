@@ -19,8 +19,15 @@ public class UIManager : MonoBehaviour
     [Header("Lose Screen")]
     public GameObject loseScreen;
 
-    // A callback that your game logic can set to handle the chosen upgrade (0‒2)
-    
+    [Header("Upgrade Screen")]
+    public GameObject upgradeScreen;
+    [Tooltip("Assign exactly 3 buttons here")]
+    public Button[] upgradeButtons;           // size = 3
+    [Tooltip("The Text component on each of those buttons")]
+    public TMP_Text[] upgradeButtonTexts;     // size = 3
+
+    // Callback to invoke when an upgrade is chosen
+    private Action<int> onUpgradeChosen;
 
     void Awake()
     {
@@ -35,6 +42,18 @@ public class UIManager : MonoBehaviour
             playerHealth = PlayerController.instance.GetComponent<Health>();
         if (loseScreen != null)
             loseScreen.SetActive(false);
+
+        // Upgrade screen setup
+        if (upgradeScreen != null)
+            upgradeScreen.SetActive(false);
+        if (upgradeButtons != null)
+        {
+            for (int i = 0; i < upgradeButtons.Length; i++)
+            {
+                int idx = i; // capture loop variable
+                upgradeButtons[i].onClick.AddListener(() => OnUpgradeButton(idx));
+            }
+        }
     }
 
     void Update()
@@ -94,5 +113,48 @@ public class UIManager : MonoBehaviour
         if (loseScreen != null)
             loseScreen.SetActive(true);
         Time.timeScale = 0f;
+    }
+
+    public void ShowUpgradeScreen(string[] options, Action<int> onChosen)
+    {
+        if (options.Length != upgradeButtons.Length)
+        {
+            Debug.LogError($"You must supply exactly {upgradeButtons.Length} options!");
+            return;
+        }
+
+        onUpgradeChosen = onChosen;
+
+        for (int i = 0; i < upgradeButtons.Length; i++)
+        {
+            upgradeButtons[i].gameObject.SetActive(true);
+            upgradeButtonTexts[i].text = options[i];
+        }
+
+        Time.timeScale = 0f; // Pause the game
+        if (upgradeScreen != null)
+            upgradeScreen.SetActive(true);
+    }
+
+    private void OnUpgradeButton(int idx)
+    {
+        if (upgradeScreen != null)
+            upgradeScreen.SetActive(false);
+
+        Time.timeScale = 1f; // resume game
+
+        onUpgradeChosen?.Invoke(idx);
+        onUpgradeChosen = null;
+    }
+
+    [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
+    static void HideOnSceneLoad()
+    {
+        var screen = GameObject.Find("UpgradeScreen");
+        if (screen != null)
+        {
+            screen.SetActive(false);
+            Time.timeScale = 1f;
+        }
     }
 }
