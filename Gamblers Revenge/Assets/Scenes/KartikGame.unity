@@ -10517,7 +10517,7 @@ GameObject:
   - component: {fileID: 1480335019}
   - component: {fileID: 1480335018}
   - component: {fileID: 1480335017}
-  - component: {fileID: 1480335016}
+  - component: {fileID: 1480335021}
   m_Layer: 5
   m_Name: EnemyHP
   m_TagString: Untagged
@@ -10525,21 +10525,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1480335016
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1480335015}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9e7d64846832342ed8cc4f4e46ad38c6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  healthSlider: {fileID: 4173264380713130713, guid: 48ea60ccb4dd94d499b347cd67c0209d, type: 3}
-  targetEnemy: {fileID: 0}
-  offset: {x: 0, y: 0, z: 0}
 --- !u!114 &1480335017
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10622,6 +10607,21 @@ RectTransform:
   m_AnchoredPosition: {x: 581.5, y: 327}
   m_SizeDelta: {x: 1163, y: 654}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1480335021
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1480335015}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bf55b941c5d46ebad572da827f606ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthSlider: {fileID: 6412892940473210708, guid: 48ea60ccb4dd94d499b347cd67c0209d, type: 3}
+  targetEnemy: {fileID: 0}
+  offset: {x: 0, y: 0, z: 0}
 --- !u!1 &1556948317
 GameObject:
   m_ObjectHideFlags: 0

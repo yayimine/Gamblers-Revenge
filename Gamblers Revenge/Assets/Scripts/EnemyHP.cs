@@ -7,7 +7,7 @@ using UnityEngine;
 /// </summary>
 public class EnemyHP : MonoBehaviour
 {
-    [SerializeField] private HPSlider hpSlider;
+    public Slider hpSlider;
     private Health health;
 
     void Awake()
