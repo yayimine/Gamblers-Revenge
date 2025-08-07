@@ -3,18 +3,33 @@ using UnityEngine;
 
 public class UpgradeEffects : MonoBehaviour
 {
+    private static UpgradeEffects _instance;
 
-    //singleton instance
-    public static UpgradeEffects instance;
+    public static UpgradeEffects Instance
+    {
+        get
+        {
+            if (_instance == null)
+            {
+                _instance = FindObjectOfType<UpgradeEffects>();
+                if (_instance == null)
+                {
+                    GameObject obj = new GameObject("UpgradeEffects");
+                    _instance = obj.AddComponent<UpgradeEffects>();
+                }
+            }
+            return _instance;
+        }
+    }
+
     private void Awake()
     {
-        // Ensure only one instance exists
-        if (instance == null)
+        if (_instance == null)
         {
-            instance = this;
+            _instance = this;
             DontDestroyOnLoad(gameObject);
         }
-        else
+        else if (_instance != this)
         {
             Destroy(gameObject);
         }

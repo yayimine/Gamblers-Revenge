@@ -72,7 +72,7 @@ public class PlayerController : MonoBehaviour
             spawner.spawnRate *= 0.8f;
 
         // 2) pick 3 random upgrades
-        List<UpgradeEffects.UpgradeType> picks = UpgradeEffects.instance.ChooseUpgrades();
+        List<UpgradeEffects.UpgradeType> picks = UpgradeEffects.Instance.ChooseUpgrades();
         string[] optionNames = picks.Select(u => u.ToString()).ToArray();
 
         // 3) show UI
@@ -80,7 +80,7 @@ public class PlayerController : MonoBehaviour
         {
             // 4) apply the picked upgrade
             UpgradeEffects.UpgradeType chosen = picks[choice];
-            UpgradeEffects.instance.ApplyUpgrade(chosen);
+            UpgradeEffects.Instance.ApplyUpgrade(chosen);
 
             _awaitingUpgrade = false;
         });
