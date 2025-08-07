@@ -10,10 +10,16 @@ public class EnemyHP : MonoBehaviour
 {
     public Slider hpSlider;
     private Health health;
+    private Camera mainCam;
 
     void Awake()
     {
         health = GetComponent<Health>();
+        if (hpSlider == null)
+        {
+            hpSlider = GetComponentInChildren<Slider>(true);
+        }
+        mainCam = Camera.main;
     }
 
     void Start()
@@ -22,14 +28,20 @@ public class EnemyHP : MonoBehaviour
         {
             hpSlider.maxValue = health.maxHp;
             hpSlider.value = health.curHp;
+
+            hpSlider.gameObject.SetActive(true);
         }
     }
 
-    void Update()
+    void LateUpdate()
     {
         if (hpSlider != null && health != null)
         {
             hpSlider.value = health.curHp;
+            if (mainCam != null)
+            {
+                hpSlider.transform.rotation = mainCam.transform.rotation;
+            }
         }
     }
 }
