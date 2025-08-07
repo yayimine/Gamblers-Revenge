@@ -6,7 +6,7 @@ using UnityEngine;
 public class Sword : Weapon
 {
     public GameObject swordSlash;
-    float slashSpeed = 0f; 
+    float slashSpeed = 40f; 
     public Animator anim;
 
     private void Awake()
@@ -18,7 +18,7 @@ public class Sword : Weapon
 
     void Start()
     {
-        slashSpeed = PlayerController.instance.shotSpeed*2;
+        
     }
 
     public override void Update()
@@ -58,6 +58,8 @@ public class Sword : Weapon
 
 
         base.Attack();
+
+        slashSpeed = PlayerController.instance.shotSpeed*2;
 
     }
 }

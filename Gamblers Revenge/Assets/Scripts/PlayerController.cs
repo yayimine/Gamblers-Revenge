@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class PlayerController : MonoBehaviour
 {
@@ -33,7 +34,7 @@ public class PlayerController : MonoBehaviour
         if (instance == null) instance = this;
         else Destroy(gameObject);
 
-        rb   = GetComponent<Rigidbody2D>();
+        rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
 
         GameManager.instance.InitializeScore();
@@ -47,7 +48,7 @@ public class PlayerController : MonoBehaviour
 
             if (_awaitingUpgrade) return;
 
-            points++;
+            points+=collision.GetComponent<Loot>().value;
             if (points >= maxPoints)
                 LevelUp();
         }
@@ -96,7 +97,8 @@ public class PlayerController : MonoBehaviour
         rb.velocity = dir * speed;
         anim.SetFloat("speed", rb.velocity.magnitude);
 
-        if (h > 0)      anim.SetBool("MovingRight", true);
+        if (h > 0) anim.SetBool("MovingRight", true);
         else if (h < 0) anim.SetBool("MovingRight", false);
+
     }
 }

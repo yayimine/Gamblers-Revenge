@@ -5,11 +5,13 @@ using UnityEngine;
 public class SwordSlices : Weapon
 {
     public GameObject projectilePrefab; //assign this in the inspector
-    float shotSpeed = 0f;
-    void Start()
+    float shotSpeed = 20f;
+    private void Awake()
     {
-        shotSpeed = PlayerController.instance.shotSpeed;
-    }
+        damage = 10f;
+        fireRate = 0.5f;
+        fireTimer = 0.5f;
+    }   
     public override void Attack()
     {
         if (!(fireTimer < 0))
@@ -36,6 +38,8 @@ public class SwordSlices : Weapon
         g.GetComponent<Projectile>().damage = damage;
 
         base.Attack();
+
+
     }
 
     public override void Update()
