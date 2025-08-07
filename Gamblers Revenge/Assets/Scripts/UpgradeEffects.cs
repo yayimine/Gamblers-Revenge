@@ -66,8 +66,19 @@ public class UpgradeEffects : MonoBehaviour
 
     public void IncreaseMaxHealth()
     {
-        //agent edit here
-        
+        // Get the player's Health component and increase both max and current HP
+        var player = PlayerController.instance;
+        if (player == null)
+            return;
+
+        var health = player.GetComponent<Health>();
+        if (health == null)
+            return;
+
+        // Increase the player's maximum health and heal to full
+        health.maxHp += 5f;
+        health.curHp = health.maxHp;
+
     }
 
     public void ApplyUpgrade(UpgradeType upgradeType)
