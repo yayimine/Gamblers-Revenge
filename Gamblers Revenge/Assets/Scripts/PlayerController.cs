@@ -82,7 +82,15 @@ public class PlayerController : MonoBehaviour
         // 1) static scaling
         level++;
         points = 0;
-        maxPoints = Mathf.RoundToInt(maxPoints * 1.5f);
+        if (maxPoints < 30) {
+            maxPoints = Mathf.RoundToInt(maxPoints * 1.3f);
+        }
+        else if (maxPoints < 100) {
+            maxPoints += 10;
+        }
+        else {
+            maxPoints += 20; 
+        }
 
         // Lower enemy spawn rates for all active spawn managers if they exist
         foreach (var spawner in FindObjectsOfType<SpawnManagerWerewolf>())
@@ -143,8 +151,8 @@ public class PlayerController : MonoBehaviour
         if (dashCooldown > 0f && !dashing)
         {
             dashCooldown -= Time.deltaTime; // Decrease the timer
-            rb.isKinematic = false;
-            col.enabled = true;
+            Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("IgnoreObstacle"), false);
+            Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("Obstacle"), false);
         }
 
         if (Input.GetKeyDown(KeyCode.Space))
@@ -156,8 +164,8 @@ public class PlayerController : MonoBehaviour
                 dashing = true;
                 dashTimer = 0.3f;
                 dashCooldown = 4f;
-                col.enabled = false;
-                rb.isKinematic = true; // Stops physics simulation
+                Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("IgnoreObstacle"), true);
+                Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("Obstacle"), true);
                 if (h > 0)
                 {
                     Vector3 spawnPosition = transform.position;
