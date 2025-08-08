@@ -1,13 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
+using JetBrains.Annotations;
 using Unity.VisualScripting;
 using UnityEngine;
 
 public class Sword : Weapon
 {
+    public AudioSource Attackslash;
     public GameObject swordSlash;
     float slashSpeed = 40f; 
     public Animator anim;
+    public float volume = 5;
 
     private void Awake()
     {
@@ -60,6 +63,6 @@ public class Sword : Weapon
         base.Attack();
 
         slashSpeed = PlayerController.instance.shotSpeed*2;
-
+        Attackslash.PlayOneShot(Attackslash.clip,volume);
     }
 }

@@ -236,6 +236,13 @@ MonoBehaviour:
   shotSpeed: 20
   maxPierces: 0
   sword: {fileID: 0}
+  dashing: 0
+  dashCooldown: 4
+  dashTimer: 0.3
+  dashRate: 4
+  afterImageLeft: {fileID: 0}
+  afterImageRight: {fileID: 0}
+  playerTransform: {fileID: 0}
 --- !u!50 &72662588
 Rigidbody2D:
   serializedVersion: 4

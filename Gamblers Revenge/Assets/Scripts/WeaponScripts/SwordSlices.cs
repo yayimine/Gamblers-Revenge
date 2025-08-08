@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class SwordSlices : Weapon
 {
+    public AudioSource BladeSlash;
     public GameObject projectilePrefab; //assign this in the inspector
     float shotSpeed = 20f;
+    public float volume=5;
     private void Awake()
     {
         damage = 10f;
@@ -32,6 +34,7 @@ public class SwordSlices : Weapon
             transform.position,
             rot
         );
+        BladeSlash.PlayOneShot(BladeSlash.clip, volume);
 
         Rigidbody2D rb = g.GetComponent<Rigidbody2D>();
         rb.velocity = shootDir.normalized * shotSpeed;
