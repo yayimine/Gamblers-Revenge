@@ -29,13 +29,13 @@ public class Sword : Weapon
             Attack(); // Call the attack method
         }
         base.Update();
-        
     }
 
 
     // Start is called before the first frame update
     public override void Attack()
     {
+        damage = PlayerController.instance.damage * 50f;
         if ((fireTimer > 0))
         {
             return;
@@ -59,7 +59,7 @@ public class Sword : Weapon
 
         base.Attack();
 
-        slashSpeed = PlayerController.instance.shotSpeed*2;
+        slashSpeed = PlayerController.instance.shotSpeed * 2;
 
     }
 }

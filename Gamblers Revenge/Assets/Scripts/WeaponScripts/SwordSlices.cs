@@ -11,9 +11,10 @@ public class SwordSlices : Weapon
         damage = 10f;
         fireRate = 0.5f;
         fireTimer = 0.5f;
-    }   
+    }
     public override void Attack()
     {
+        damage = PlayerController.instance.damage * 10f;
         if (!(fireTimer < 0))
         {
             return;
@@ -50,4 +51,5 @@ public class SwordSlices : Weapon
         }
         base.Update();
     }
+    
 }

@@ -47,20 +47,19 @@ public class UpgradeEffects : MonoBehaviour
     public void IncreaseFireRate()
     {
         
-        PlayerController.instance.curWeapon.fireRate /= 1.2f;
+        PlayerController.instance.curWeapon.fireRate /= 1.15f;
         
     }
 
     public void IncreaseDamage()
     {
-        if (PlayerController.instance.damage <= 20f) PlayerController.instance.damage += 5f;
-        else PlayerController.instance.damage *= 1.2f;
+        PlayerController.instance.damage *= 1.15f;
 
     }
 
     public void IncreaseSpeed()
     {
-        PlayerController.instance.speed += 1.5f;
+        PlayerController.instance.speed += 1.2f;
     }
 
     public void IncreasePierce()
@@ -88,7 +87,7 @@ public class UpgradeEffects : MonoBehaviour
     public void IncreaseDashCooldown()
     {
         // Assuming PlayerController has a dashCooldown field
-        PlayerController.instance.dashCooldown *= 0.8f; // Decrease cooldown by 20%
+        PlayerController.instance.dashCooldown *= 0.75f; // Decrease cooldown by 20%
     }
 
     public void ApplyUpgrade(UpgradeType upgradeType)

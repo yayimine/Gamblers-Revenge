@@ -56,6 +56,9 @@ public class PlayerController : MonoBehaviour
         GameManager.instance.InitializeScore();
 
         Time.timeScale = 1f; // Ensure time scale is normal at start
+
+        GameManager.instance.gameStage = 1;
+        GameManager.instance.musicStage = 0;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
