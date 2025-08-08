@@ -33,8 +33,8 @@ public class PlayerController : MonoBehaviour
     public Sword sword;
     public bool dashing;
     public float dashCooldown = 4f;
-    public float dashTimer = 0.3f;
-    public float dashRate = 4f;
+    public float dashTimer = 0.2f;
+    public float dashRate = 8f;
     Collider2D col;
     public GameObject afterImageLeft;
     public GameObject afterImageRight;
