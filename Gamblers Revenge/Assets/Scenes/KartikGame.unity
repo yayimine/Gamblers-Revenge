@@ -382,6 +382,7 @@ MonoBehaviour:
   speed: 5
   curWeapon: {fileID: 1916245789}
   projectilePrefab: {fileID: 0}
+  projectileScale: 1
   damage: 1
   shotSpeed: 20
   maxPierces: 0
@@ -18329,6 +18330,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 74e7a44abaa1c4a85b222ec7a428d537, type: 3}
   - {fileID: 21300000, guid: 6a035ebf551294a02bbc1b96d83eb4ec, type: 3}
   - {fileID: 21300000, guid: 7fd7620cc569f4a78ad1c1cccd149db2, type: 3}
+  - {fileID: 21300000, guid: 6f236b5dadaf54549987e53f8aa57fb0, type: 3}
   loseScreen: {fileID: 936329112}
   mainMenuButton: {fileID: 1556948319}
   restartButton: {fileID: 366250888}

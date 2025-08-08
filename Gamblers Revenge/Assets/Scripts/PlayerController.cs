@@ -17,6 +17,7 @@ public class PlayerController : MonoBehaviour
     public float speed = 7f;
     public Weapon curWeapon;
     public GameObject projectilePrefab;
+    public float projectileScale = 1f; // Scale of the projectile, used for visual size
 
     [Header("Stats (modified by upgrades)")]
     public float damage = 1f;
