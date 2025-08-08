@@ -11,16 +11,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: 099b2d99f43d246c8bf250adafb287f9
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/EvilCastle.unity
     guid: b63e62e4b3f736a4b992db66046d5b9d
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Game.unity
     guid: cbee3e74b85e64947904d1d4095ee259
   - enabled: 0
     path: Assets/Scenes/EvilCastleKartik.unity
     guid: 3a53dc12919ca214b89caaf837a227e0
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/TRIALS.unity
     guid: 574ac00def218473d982a3162685ef01
   - enabled: 1

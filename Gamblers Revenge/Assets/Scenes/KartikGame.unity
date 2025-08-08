@@ -377,6 +377,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10f8f6a6773e2ff44933e33174b2b2b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DashSound: {fileID: 72662592}
+  volume: 5
   points: 0
   maxPoints: 5
   level: 1
