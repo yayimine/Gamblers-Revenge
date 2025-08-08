@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 3318637900624810053}
   - component: {fileID: -6063083815299604069}
   - component: {fileID: 7425909888153507786}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Werewolf
   m_TagString: Enemy
   m_Icon: {fileID: 0}

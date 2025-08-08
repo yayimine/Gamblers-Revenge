@@ -40,26 +40,26 @@ public class UpgradeEffects : MonoBehaviour
         Damage,
         Speed,
         Pierce,
-        MaxHealth
+        MaxHealth,
+        DashCooldown
     }
 
     public void IncreaseFireRate()
     {
         
-        PlayerController.instance.curWeapon.fireRate /= 1.2f;
+        PlayerController.instance.curWeapon.fireRate /= 1.15f;
         
     }
 
     public void IncreaseDamage()
     {
-        if (PlayerController.instance.damage <= 20f) PlayerController.instance.damage += 5f;
-        else PlayerController.instance.damage *= 1.2f;
+        PlayerController.instance.damage *= 1.15f;
 
     }
 
     public void IncreaseSpeed()
     {
-        PlayerController.instance.speed += 1.5f;
+        PlayerController.instance.speed += 1.2f;
     }
 
     public void IncreasePierce()
@@ -84,6 +84,11 @@ public class UpgradeEffects : MonoBehaviour
         health.curHp = health.maxHp;
 
     }
+    public void IncreaseDashCooldown()
+    {
+        // Assuming PlayerController has a dashCooldown field
+        PlayerController.instance.dashCooldown *= 0.75f; // Decrease cooldown by 20%
+    }
 
     public void ApplyUpgrade(UpgradeType upgradeType)
     {
@@ -104,6 +109,9 @@ public class UpgradeEffects : MonoBehaviour
             case UpgradeType.MaxHealth:
                 IncreaseMaxHealth();
                 break;
+            case UpgradeType.DashCooldown:
+                IncreaseDashCooldown();
+                break;
             default:
                 Debug.LogWarning("Unhandled upgrade type: " + upgradeType);
                 break;
@@ -120,7 +128,7 @@ public class UpgradeEffects : MonoBehaviour
             UpgradeType.Damage,   UpgradeType.Damage,   UpgradeType.Damage,
             UpgradeType.Speed,    UpgradeType.Speed,    UpgradeType.Speed,
             UpgradeType.MaxHealth, UpgradeType.MaxHealth, UpgradeType.MaxHealth,
-            UpgradeType.Pierce
+            UpgradeType.Pierce, UpgradeType.DashCooldown
         };
 
         var chosenUpgrades = new List<UpgradeType>();

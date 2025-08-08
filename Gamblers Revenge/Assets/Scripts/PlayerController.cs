@@ -17,6 +17,7 @@ public class PlayerController : MonoBehaviour
     public float speed = 7f;
     public Weapon curWeapon;
     public GameObject projectilePrefab;
+    public float projectileScale = 1f; // Scale of the projectile, used for visual size
 
     [Header("Stats (modified by upgrades)")]
     public float damage = 1f;
@@ -53,6 +54,11 @@ public class PlayerController : MonoBehaviour
         col = GetComponent<Collider2D>();
 
         GameManager.instance.InitializeScore();
+
+        Time.timeScale = 1f; // Ensure time scale is normal at start
+
+        GameManager.instance.gameStage = 1;
+        GameManager.instance.musicStage = 0;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

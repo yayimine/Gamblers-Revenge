@@ -27,6 +27,6 @@ EditorBuildSettings:
     path: Assets/Scenes/KartikGame.unity
     guid: ef5dddb8a5184204591136b005d6c1b0
   - enabled: 1
-    path: Assets/Scenes/Control guidience.unity
+    path: Assets/Scenes/ds.unity
     guid: 143a8cd98f4570e4c86c3052a54beb75
   m_configObjects: {}
