@@ -108,6 +108,8 @@ public class UIManager : MonoBehaviour
             healthText.text = $"{playerHealth.curHp}/{playerHealth.maxHp}";
         if (pierceBar != null)
             pierceBar.fillAmount = sword.fireTimer / sword.fireRate;
+        if (dashBar != null)
+            dashBar.fillAmount = player.dashCooldown / player.dashRate;
     }
 
 

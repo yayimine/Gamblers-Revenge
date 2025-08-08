@@ -29,9 +29,11 @@ public class PlayerController : MonoBehaviour
     private Animator anim;
     public Sword sword;
     public bool dashing;
-    public float dashCooldown = 2f;
-    public float dashTimer = 0.2f;
-    public float dashRate = 2f;
+    public float dashCooldown = 4f;
+    public float dashTimer = 0.3f;
+    public float dashRate = 4f;
+    Collider2D col;
+
 
 
     void Awake()
@@ -42,6 +44,7 @@ public class PlayerController : MonoBehaviour
 
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+        col = GetComponent<Collider2D>();
 
         GameManager.instance.InitializeScore();
     }
@@ -96,6 +99,12 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        Debug.Log("Time.timeScale: " + Time.timeScale);
+        if (Input.GetKeyDown(KeyCode.T))
+        {
+            Time.timeScale = 1f;
+            Debug.Log("Time scale reset to 1.");
+        }
 
         float h = Input.GetAxisRaw("Horizontal");
         float v = Input.GetAxisRaw("Vertical");
@@ -123,6 +132,8 @@ public class PlayerController : MonoBehaviour
         if (dashCooldown > 0f && !dashing)
         {
             dashCooldown -= Time.deltaTime; // Decrease the timer
+            rb.isKinematic = false;
+            col.enabled = true;
         }
 
         if (Input.GetKeyDown(KeyCode.Space))
@@ -132,8 +143,10 @@ public class PlayerController : MonoBehaviour
             {
                 rb.velocity = dir * speed * 3;
                 dashing = true;
-                dashTimer = 0.2f;
-                dashCooldown = 2f;
+                dashTimer = 0.3f;
+                dashCooldown = 4f;
+                col.enabled = false;
+                rb.isKinematic = true; // Stops physics simulation
 
             }
         }

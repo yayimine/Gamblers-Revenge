@@ -5,7 +5,6 @@ public class Slash : MonoBehaviour
 {
     // make these public so other scripts (like Sword) can assign to them
     [HideInInspector] public float damage;
-    [HideInInspector] public int maxPierces;
 
     [HideInInspector] public float initialSpeed = 20f;
     public float lifetime = 3f;
@@ -19,10 +18,6 @@ public class Slash : MonoBehaviour
         if (damage <= 0f)
             damage = PlayerController.instance.damage;
 
-        if (maxPierces <= 0)
-            maxPierces = PlayerController.instance.maxPierces;
-
-        _piercesLeft = maxPierces;
         initialSpeed = GetComponent<Rigidbody2D>().velocity.magnitude;
     }
 
@@ -46,9 +41,6 @@ public class Slash : MonoBehaviour
         // apply `damage` to the enemy here, e.g.:
         // other.GetComponent<Enemy>()?.TakeDamage(damage);
 
-        if (_piercesLeft <= 0)
-            Destroy(gameObject);
-        else
-            _piercesLeft--;
+
     }
 }
