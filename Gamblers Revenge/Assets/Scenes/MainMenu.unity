@@ -421,7 +421,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Gambler's Revenge
+  m_text: Loaded Dice
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f655a8e97288049c682a1306e0b68757, type: 2}
   m_sharedMaterial: {fileID: -8744643992395399738, guid: f655a8e97288049c682a1306e0b68757, type: 2}
@@ -692,7 +692,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Gambler's Revenge
+  m_text: Loaded Dice
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f655a8e97288049c682a1306e0b68757, type: 2}
   m_sharedMaterial: {fileID: -8744643992395399738, guid: f655a8e97288049c682a1306e0b68757, type: 2}
@@ -942,7 +942,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Gambler's Revenge
+  m_text: Loaded Dice
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f655a8e97288049c682a1306e0b68757, type: 2}
   m_sharedMaterial: {fileID: -8744643992395399738, guid: f655a8e97288049c682a1306e0b68757, type: 2}
