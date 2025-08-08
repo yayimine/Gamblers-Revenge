@@ -50,10 +50,6 @@ public class Health : MonoBehaviour
                 PlayerController.instance.speed= 0f;
                 await Task.Delay(2000);
                 UIManager.instance?.ShowLoseScreen();
-                if(UIManager.instance != null)
-                {
-                    UIManager.instance.UpdateHealth(0, maxHp);
-                }
                 if(gameObject != null) Destroy(gameObject);
             }
             else
