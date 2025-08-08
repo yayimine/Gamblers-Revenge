@@ -8,6 +8,9 @@ using System.Threading.Tasks;
 
 public class PlayerController : MonoBehaviour
 {
+    [Header("Audio")]
+    public AudioSource DashSound;
+    public float volume = 5;
     [Header("Leveling & Upgrades")]
     public int points = 0;
     public int maxPoints = 5;
@@ -39,6 +42,7 @@ public class PlayerController : MonoBehaviour
     public GameObject afterImageLeft;
     public GameObject afterImageRight;
     public Transform playerTransform;
+    
 
 
 
@@ -153,6 +157,7 @@ public class PlayerController : MonoBehaviour
             dashCooldown -= Time.deltaTime; // Decrease the timer
             Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("IgnoreObstacle"), false);
             Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("Obstacle"), false);
+            Attackslash.PlayOneShot(DashSound.clip,volume);
         }
 
         if (Input.GetKeyDown(KeyCode.Space))
