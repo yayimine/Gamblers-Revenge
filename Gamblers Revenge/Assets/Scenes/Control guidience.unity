@@ -9769,8 +9769,15 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: WASD  to move around. Left click to attack. RIght hold to release pierce
+  m_text: 'WASD  to move around. Left click to attack. RIght hold to release pierce
     attack.  Press Space to Dash." (+..+)"
+
+
+    Dashing allows you to become invincible
+    and go through walls!
+
+
+    P.S If game is frozen press T it fixes it'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -31451,6 +31458,13 @@ MonoBehaviour:
   shotSpeed: 20
   maxPierces: 0
   sword: {fileID: 0}
+  dashing: 0
+  dashCooldown: 4
+  dashTimer: 0.3
+  dashRate: 4
+  afterImageLeft: {fileID: 909484599711743237, guid: 024fdfa3200b0f149956f2a71afa0ca8, type: 3}
+  afterImageRight: {fileID: 7857513798926118290, guid: 1200627733ac0434b991e7eb9878ab8d, type: 3}
+  playerTransform: {fileID: 1865400090}
 --- !u!4 &1865400090
 Transform:
   m_ObjectHideFlags: 0

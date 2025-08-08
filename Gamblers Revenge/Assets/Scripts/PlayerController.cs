@@ -3,6 +3,8 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.UIElements;
 using UnityEngine.UIElements.Experimental;
+using System.Threading.Tasks;
+
 
 public class PlayerController : MonoBehaviour
 {
@@ -33,6 +35,10 @@ public class PlayerController : MonoBehaviour
     public float dashTimer = 0.3f;
     public float dashRate = 4f;
     Collider2D col;
+    public GameObject afterImageLeft;
+    public GameObject afterImageRight;
+    public Transform playerTransform;
+
 
 
 
@@ -97,9 +103,8 @@ public class PlayerController : MonoBehaviour
         });
     }
 
-    void Update()
+    async void Update()
     {
-        Debug.Log("Time.timeScale: " + Time.timeScale);
         if (Input.GetKeyDown(KeyCode.T))
         {
             Time.timeScale = 1f;
@@ -147,6 +152,24 @@ public class PlayerController : MonoBehaviour
                 dashCooldown = 4f;
                 col.enabled = false;
                 rb.isKinematic = true; // Stops physics simulation
+                if (h > 0)
+                {
+                    Vector3 spawnPosition = transform.position;
+                    Instantiate(afterImageRight, spawnPosition, Quaternion.identity);
+                    await Task.Delay(300);
+                    Instantiate(afterImageRight, spawnPosition, Quaternion.identity);
+                    await Task.Delay(300);
+                    Instantiate(afterImageRight, spawnPosition, Quaternion.identity);
+                }
+                else if (h < 0)
+                {
+                    Vector3 spawnPosition = transform.position;
+                    Instantiate(afterImageLeft, spawnPosition, Quaternion.identity);
+                    await Task.Delay(300);
+                    Instantiate(afterImageLeft, spawnPosition, Quaternion.identity);
+                    await Task.Delay(300);
+                    Instantiate(afterImageLeft, spawnPosition, Quaternion.identity);
+                }
 
             }
         }
