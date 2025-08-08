@@ -53,6 +53,8 @@ public class PlayerController : MonoBehaviour
         col = GetComponent<Collider2D>();
 
         GameManager.instance.InitializeScore();
+
+        Time.timeScale = 1f; // Ensure time scale is normal at start
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
