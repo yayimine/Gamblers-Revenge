@@ -40,6 +40,27 @@ public class Ghost : MonoBehaviour
 
                 GameManager.instance.UpdateScore(1); // Add score when the enemy is destroyed
             }
+        } else if (collision.gameObject.CompareTag("Slash"))
+        { //if enemy collides with projectile
+
+            GetComponent<Health>().TakeDamage(collision.gameObject.GetComponent<Slash>().damage);
+            if (GetComponent<Health>().curHp <= 0f)
+            {
+                Destroy(gameObject);
+                if (loot != null)
+                {
+                    //loot scale = 1
+                    loot.transform.localScale = new Vector3(lootScale, lootScale, 1f); // Set the scale of the loot
+                    Loot lootComponent = loot.GetComponent<Loot>();
+                    if (lootComponent != null)
+                    {
+                        lootComponent.value = lootValue; // Set the value of the loot
+                    }
+                    Instantiate(loot, transform.position, loot.transform.rotation); // Spawn loot at the enemy's position
+                }
+
+                GameManager.instance.UpdateScore(1); // Add score when the enemy is destroyed
+            }
         }
     }
 

@@ -36,7 +36,7 @@ public class Sword : Weapon
     // Start is called before the first frame update
     public override void Attack()
     {
-        if (!(fireTimer < 0))
+        if ((fireTimer > 0))
         {
             return;
         }
@@ -54,7 +54,7 @@ public class Sword : Weapon
 
         Rigidbody2D rb = slash.GetComponent<Rigidbody2D>();
         rb.velocity = shootDir.normalized * slashSpeed;
-        slash.GetComponent<Projectile>().damage = damage;
+        slash.GetComponent<Slash>().damage = damage;
 
 
         base.Attack();

@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.UIElements;
+using UnityEngine.UIElements.Experimental;
 
 public class PlayerController : MonoBehaviour
 {
@@ -27,6 +28,11 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rb;
     private Animator anim;
     public Sword sword;
+    public bool dashing;
+    public float dashCooldown = 2f;
+    public float dashTimer = 0.2f;
+    public float dashRate = 2f;
+
 
     void Awake()
     {
@@ -48,7 +54,7 @@ public class PlayerController : MonoBehaviour
 
             if (_awaitingUpgrade) return;
 
-            points+=collision.GetComponent<Loot>().value;
+            points += collision.GetComponent<Loot>().value;
             if (points >= maxPoints)
                 LevelUp();
         }
@@ -90,15 +96,46 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+
         float h = Input.GetAxisRaw("Horizontal");
         float v = Input.GetAxisRaw("Vertical");
         Vector2 dir = new Vector2(h, v).normalized;
 
-        rb.velocity = dir * speed;
-        anim.SetFloat("speed", rb.velocity.magnitude);
+        if (!dashing)
+        {
 
-        if (h > 0) anim.SetBool("MovingRight", true);
-        else if (h < 0) anim.SetBool("MovingRight", false);
+            rb.velocity = dir * speed;
+            anim.SetFloat("speed", rb.velocity.magnitude);
 
+            if (h > 0) anim.SetBool("MovingRight", true);
+            else if (h < 0) anim.SetBool("MovingRight", false);
+
+        }
+        else
+        {
+            dashTimer -= Time.deltaTime;
+            if (dashTimer <= 0)
+            {
+                dashing = false;
+            }
+        }
+
+        if (dashCooldown > 0f && !dashing)
+        {
+            dashCooldown -= Time.deltaTime; // Decrease the timer
+        }
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+
+            if (dashCooldown < 0f && !dashing)
+            {
+                rb.velocity = dir * speed * 3;
+                dashing = true;
+                dashTimer = 0.2f;
+                dashCooldown = 2f;
+
+            }
+        }
     }
 }
