@@ -82,7 +82,15 @@ public class PlayerController : MonoBehaviour
         // 1) static scaling
         level++;
         points = 0;
-        maxPoints = Mathf.RoundToInt(maxPoints * 1.5f);
+        if (maxPoints < 30) {
+            maxPoints = Mathf.RoundToInt(maxPoints * 1.3f);
+        }
+        else if (maxPoints < 100) {
+            maxPoints += 10;
+        }
+        else {
+            maxPoints += 20; 
+        }
 
         // Lower enemy spawn rates for all active spawn managers if they exist
         foreach (var spawner in FindObjectsOfType<SpawnManagerWerewolf>())
