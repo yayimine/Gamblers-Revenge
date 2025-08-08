@@ -143,8 +143,8 @@ public class PlayerController : MonoBehaviour
         if (dashCooldown > 0f && !dashing)
         {
             dashCooldown -= Time.deltaTime; // Decrease the timer
-            rb.isKinematic = false;
-            col.enabled = true;
+            Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("IgnoreObstacle"), false);
+            Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("Obstacle"), false);
         }
 
         if (Input.GetKeyDown(KeyCode.Space))
@@ -156,8 +156,8 @@ public class PlayerController : MonoBehaviour
                 dashing = true;
                 dashTimer = 0.3f;
                 dashCooldown = 4f;
-                col.enabled = false;
-                rb.isKinematic = true; // Stops physics simulation
+                Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("IgnoreObstacle"), true);
+                Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("Obstacle"), true);
                 if (h > 0)
                 {
                     Vector3 spawnPosition = transform.position;
