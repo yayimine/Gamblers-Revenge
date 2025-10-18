@@ -1,2 +1,2 @@
 # Gambers Revenge
-C4GD final project
+Goofy game made in 5 days
